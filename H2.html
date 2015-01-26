@@ -36,7 +36,7 @@ a {color: #475EA3;
 	cursor: pointer;
 }  
 span.click { cursor: pointer; color: #475EA3; } 
-span.clicked {color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.show = function(el) {
+span.clicked {color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.swap = function(el) {
 	  $(el).html($(el).attr("alt"));
 		$(el).removeClass('click');
     $(el).addClass('clicked');
@@ -90,7 +90,7 @@ Hold on now.
 
 Yes, these doors are impressive--two great wooden slabs, set deep into the stone archway of the school&#x27;s entrance. You might even call them *intimidating*.
 
-And yes, it&#x27;s odd that one of them is ajar. Though really, if they were sealed tight, you wouldn&#x27;t be hearing those moans &lt;span class=&quot;click&quot; onclick=show(this) alt=&quot;...(Which do seem to be growing louder)&quot;&gt;...&lt;/span&gt;.
+And yes, it&#x27;s odd that one of them is ajar. Though really, if they were sealed tight, you wouldn&#x27;t be hearing those moans &lt;span class=&quot;click&quot; onclick=swap(this) alt=&quot;...(Which do seem to be growing louder)&quot;&gt;...&lt;/span&gt;.
 
 Still. Nothing to get all worked up about. Time to head [[home]]. Maybe there are some Pop-Tarts left! No reason to go [[inside-&gt;entrance]]. 
 
@@ -110,7 +110,7 @@ But being here is better than stumbling around in that drafty school. I&#x27;m j
 
 Probably nothing to worry about. Best to toddle on [[home]]. No need to get any closer to the [[front doors]]. </tw-passagedata><tw-passagedata pid="5" name="entrance" tags="" position="831.6666666666667,431.6666666666667">&lt;% story.state.entered = true;%&gt;I wish you hadn&#x27;t done that. 
 
-But as long as we&#x27;re here, take a moment to admire the architectural glory of Dunnsmouth Secondary, and this splendid atrium! I don&#x27;t know why outsiders call it &quot;gloomy&quot;&lt;span class=&quot;click&quot; onclick=&#x27;show(this)&#x27; alt=&#x27; or &quot;dank&quot;&#x27;&gt;...&lt;/span&gt;  &lt;span class=&quot;click&quot; onclick=&#x27;show(this)&#x27; alt=&#x27; or &quot;mausolesque&quot;&#x27;&gt;...&lt;/span&gt; &lt;span class=&quot;click&quot; onclick=&#x27;show(this)&#x27; alt=&#x27; (which is not even a word).&#x27;&gt;...&lt;/span&gt;
+But as long as we&#x27;re here, take a moment to admire the architectural glory of Dunnsmouth Secondary, and this splendid atrium! I don&#x27;t know why outsiders call it &quot;gloomy&quot;&lt;span class=&quot;click&quot; onclick=&#x27;swap(this)&#x27; alt=&#x27; or &quot;dank&quot;&#x27;&gt;...&lt;/span&gt;  &lt;span class=&quot;click&quot; onclick=&#x27;swap(this)&#x27; alt=&#x27; or &quot;mausolesque&quot;&#x27;&gt;...&lt;/span&gt; &lt;span class=&quot;click&quot; onclick=&#x27;swap(this)&#x27; alt=&#x27; (which is not even a word).&#x27;&gt;...&lt;/span&gt;
 
 In my opinion, the yellowish, muted lights and cold granite floors lend a *contemplative* mood.   
 
@@ -143,13 +143,13 @@ Up the [[grand staircase-&gt;firstLanding]]?
 
 Or down the [[main hallway-&gt;firstFloorHall]]? 
 
-(And it&#x27;s still not too late to go [[home]].)</tw-passagedata><tw-passagedata pid="13" name="bleedingMan" tags="" position="996.6666666666667,431.6666666666667">Why, it&#x27;s Mr. Gint! &lt;span class=&quot;click&quot;  onclick=&#x27;show(this)&#x27; alt=&quot;(Your non-Euclidean geometry teacher, a pale, balding man, who, if I may be frank, has demonstrated that he has as firm a grip on reality as he does on his hair follicles.)&quot;&gt;...&lt;/span&gt;
+(And it&#x27;s still not too late to go [[home]].)</tw-passagedata><tw-passagedata pid="13" name="bleedingMan" tags="" position="996.6666666666667,431.6666666666667">Why, it&#x27;s Mr. Gint! &lt;span class=&quot;click&quot;  onclick=&#x27;swap(this)&#x27; alt=&quot;(Your non-Euclidean geometry teacher, a pale, balding man, who, if I may be frank, has demonstrated that he has as firm a grip on reality as he does on his hair follicles.)&quot;&gt;...&lt;/span&gt;
 
 Though why he&#x27;s lying there on the floor, unconscious, in a large puddle of water, is anybody&#x27;s guess. 
 
 At least we know he&#x27;s not dead. That moaning is a good sign, though the blood leaking from his hairless skull is definitely *not*. And where&#x27;s all that [[water-&gt;waterOnStairs]] coming from? 
 
-Hmm. I suppose you&#x27;ll have to do *something* now.&lt;span class=&quot;click&quot;  onclick=&#x27;show(this)&#x27; alt=&quot;Call 9-1-1? (That&#x27;s a joke. Cell phones have never worked in Dunnsmouth.)&quot;&gt;Call 9-1-1?&lt;/span&gt; Or [[try to wake him up?-&gt;wakingGint]]
+Hmm. I suppose you&#x27;ll have to do *something* now.&lt;span class=&quot;click&quot;  onclick=&#x27;swap(this)&#x27; alt=&quot;Call 9-1-1? (That&#x27;s a joke. Cell phones have never worked in Dunnsmouth.)&quot;&gt;Call 9-1-1?&lt;/span&gt; Or [[try to wake him up?-&gt;wakingGint]]
 </tw-passagedata><tw-passagedata pid="14" name="wakingGint" tags="" position="1201.6666666666667,433.33333333333337">Harrison! Shaking a man and calling his name is not going to--
 
 Oh. It worked. Never mind. 
@@ -162,7 +162,7 @@ Mr. Gint blinks up at you. &quot;I was knocked down... by something.&quot;
 
 &quot;No! Some *thing!* A wildish, toothy thing!&quot;
 
-Oh, poor Mr. Gint. He slipped in the water, conked his head, and now he&#x27;s delusional. Best [[help him out the door-&gt;helpGintToDoor]]--and close it behind you. No reason to [[question him further-&gt;questionGint]].</tw-passagedata><tw-passagedata pid="15" name="helpGintToDoor" tags="" position="1340,578.3333333333334">&lt;%story.state.gintGone = true;%&gt; Mr. Gint leans on you a bit, but makes it to the steps outside. He seems happy &lt;span class=&quot;click&quot; onclick=show(this) alt=&quot;(or perhaps *relieved* is a better word)&quot;&gt; ...&lt;/span&gt; to be leaving the school.
+Oh, poor Mr. Gint. He slipped in the water, conked his head, and now he&#x27;s delusional. Best [[help him out the door-&gt;helpGintToDoor]]--and close it behind you. No reason to [[question him further-&gt;questionGint]].</tw-passagedata><tw-passagedata pid="15" name="helpGintToDoor" tags="" position="1340,578.3333333333334">&lt;%story.state.gintGone = true;%&gt; Mr. Gint leans on you a bit, but makes it to the steps outside. He seems happy &lt;span class=&quot;click&quot; onclick=swap(this) alt=&quot;(or perhaps *relieved* is a better word)&quot;&gt; ...&lt;/span&gt; to be leaving the school.
 
 Suddenly he wheels toward the door. &quot;I almost forgot! There are people inside!&quot;
 
@@ -231,7 +231,7 @@ His eyelids flutter. I &quot;...that&#x27;s all I remember.&quot;
 
 Oh dear. I believe he&#x27;s going to pass out. You should [[help Mr. Gint to the door.-&gt;helpGintToDoor]]</tw-passagedata><tw-passagedata pid="27" name="helpGintToDoor2" tags="" position="1340,728.3333333333334">&quot;But what about you?&quot; you ask the man. 
 
-&quot;I can get home by myself, my boy&lt;span class=&quot;click&quot; onclick=show(this) alt=&quot;...(He&#x27;s never been certain of your name in class, and seems even less certain of it now.)&quot;&gt;...&lt;/span&gt;&quot; 
+&quot;I can get home by myself, my boy&lt;span class=&quot;click&quot; onclick=swap(this) alt=&quot;...(He&#x27;s never been certain of your name in class, and seems even less certain of it now.)&quot;&gt;...&lt;/span&gt;&quot; 
 
 Then, holding his hand to the back of his head, he walks down the hill toward town. 
 
