@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="H2 and the Thing" startnode="9" creator="Twine" creator-version="2.0.2" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html {  
+<div id="passage"></div><tw-storydata name="H2 and the Thing" startnode="1" creator="Twine" creator-version="2.0.2" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html {  
 	background-image: linear-gradient(to bottom,  hsl(50, 33%, 98%), gray);
   background-image: -webkit-linear-gradient(top,  hsl(50, 33%, 98%), gray);
   background-attachment: fixed;
@@ -36,7 +36,8 @@ a {color: #475EA3;
 	cursor: pointer;
 }  
 span.click { cursor: pointer; color: #475EA3; } 
-span.clicked {color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.swap = function(el) {
+span.clicked {color: black; }
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.swap = function(el) {
 	  $(el).html($(el).attr("alt"));
 		$(el).removeClass('click');
     $(el).addClass('clicked');
@@ -79,13 +80,14 @@ window.toggleInventory = function(el, itemText) {
 	  showInventory();
 	}
 }
-</script><tw-passagedata pid="1" name="0utside" tags="" position="681.6666666666667,280">Out for a walk, are we? Excellent idea, Harrison. Keeps the blood flowing and all that, especially on such a blustery day. 
+
+</script><tw-passagedata pid="1" name="0utside" tags="" position="681,280">Out for a walk, are we? Excellent idea, Harrison. Keeps the blood flowing and all that, especially on such a blustery day. 
 
 Why not *keep* walking? 
 
 After all, there&#x27;s nothing here on the point except for your school, good ol&#x27; Dunnsmouth Secondary. And as it&#x27;s Saturday, there&#x27;s absolutely nothing to see here. Besides, aren&#x27;t you suspended? 
 
-Best head back [[home]]. You&#x27;re better off ignoring those [[disturbing noises-&gt;moans]]. &lt;%story.state.poptarts = true; story.state.entered = true; %&gt;</tw-passagedata><tw-passagedata pid="2" name="front doors" tags="" position="681.6666666666667,430">
+Best head back [[home]]. You&#x27;re better off ignoring those [[disturbing noises-&gt;moans]]. &lt;%story.state.poptarts = true; story.state.entered = true; %&gt;</tw-passagedata><tw-passagedata pid="2" name="front doors" tags="" position="681,430">
 Hold on now. 
 
 Yes, these doors are impressive--two great wooden slabs, set deep into the stone archway of the school&#x27;s entrance. You might even call them *intimidating*.
@@ -99,43 +101,43 @@ story.state.poptarts = true;
 
 
 
-%&gt;</tw-passagedata><tw-passagedata pid="3" name="home" tags="" position="555,576.6666666666667">There now. Don&#x27;t you feel better, safe inside your lovely cottage? 
+%&gt;</tw-passagedata><tw-passagedata pid="3" name="home" tags="" position="555,576">There now. Don&#x27;t you feel better, safe inside your lovely cottage? 
 
 Well, maybe &quot;lovely&quot; is pushing it, and &quot;home&quot; doesn&#x27;t fit either. Frankly, it&#x27;s a aged rental property with ill-fitting windows that can&#x27;t keep out the winter drafts, carpet that&#x27;s seen better days, a stove that won&#x27;t stay lit... &lt;%=story.state.poptarts ? &quot;and no Pop-Tarts. Sorry about that.&quot; : &quot;&quot;%&gt;
 
 
 But being here is better than stumbling around in that drafty school. I&#x27;m just glad that you&#x27;re not tempted to [[go back-&gt;backToSchool]].
 
-&lt;%=story.state.entered ? &quot;I&#x27;m sure that nothing you saw today will haunt your [[dreams]].&quot; : &quot;&quot;%&gt; </tw-passagedata><tw-passagedata pid="4" name="moans" tags="" position="556.6666666666667,430">Ah, yes. Those noises, coming faintly from somewhere inside the school. A bit *moany*, aren&#x27;t they? 
+&lt;%=story.state.entered ? &quot;I&#x27;m sure that nothing you saw today will haunt your [[dreams]].&quot; : &quot;&quot;%&gt; </tw-passagedata><tw-passagedata pid="4" name="moans" tags="" position="556,430">Ah, yes. Those noises, coming faintly from somewhere inside the school. A bit *moany*, aren&#x27;t they? 
 
-Probably nothing to worry about. Best to toddle on [[home]]. No need to get any closer to the [[front doors]]. </tw-passagedata><tw-passagedata pid="5" name="entrance" tags="" position="831.6666666666667,431.6666666666667">&lt;% story.state.entered = true;%&gt;I wish you hadn&#x27;t done that. 
+Probably nothing to worry about. Best to toddle on [[home]]. No need to get any closer to the [[front doors]]. </tw-passagedata><tw-passagedata pid="5" name="entrance" tags="" position="831,431">&lt;% story.state.entered = true;%&gt;I wish you hadn&#x27;t done that. 
 
 But as long as we&#x27;re here, take a moment to admire the architectural glory of Dunnsmouth Secondary, and this splendid atrium! I don&#x27;t know why outsiders call it &quot;gloomy&quot;&lt;span class=&quot;click&quot; onclick=&#x27;swap(this)&#x27; alt=&#x27; or &quot;dank&quot;&#x27;&gt;...&lt;/span&gt;  &lt;span class=&quot;click&quot; onclick=&#x27;swap(this)&#x27; alt=&#x27; or &quot;mausolesque&quot;&#x27;&gt;...&lt;/span&gt; &lt;span class=&quot;click&quot; onclick=&#x27;swap(this)&#x27; alt=&#x27; (which is not even a word).&#x27;&gt;...&lt;/span&gt;
 
 In my opinion, the yellowish, muted lights and cold granite floors lend a *contemplative* mood.   
 
 Though it&#x27;s hard to contemplate anything with that all that moaning coming from that [[man-&gt;bleedingMan]] lying on the floor at the base of the staircase. (Perhaps I should have mentioned him earlier?)</tw-passagedata><tw-passagedata pid="6" name="dreams" tags="" position="421,579">
-Sleep tight, Harrison Squared. Sleep tight. </tw-passagedata><tw-passagedata pid="7" name="upstairsHallway" tags="" position="761.6666666666667,853.3333333333334">&lt;h1&gt;Upstairs Hallway&lt;/h1&gt;
+Sleep tight, Harrison Squared. Sleep tight. </tw-passagedata><tw-passagedata pid="7" name="upstairsHallway" tags="" position="761,853">&lt;h1&gt;Upstairs Hallway&lt;/h1&gt;
 A long row of classrooms stretch out away from [[Dr. Herbert&#x27;s lab-&gt;herbertRoom]].
 
 So many rooms. [[The music room-&gt;musicRoom]], [[Ms. Velloc&#x27;s room-&gt;velloc]], [[Mr. Gint&#x27;s room-&gt;mathRoom]]
 
-You could also head [[downstairs-&gt;atrium]], for all the good it&#x27;ll do.</tw-passagedata><tw-passagedata pid="8" name="herbertRoom" tags="" position="528.3333333333334,1098.3333333333335">&lt;h1&gt;Dr. Herbert&#x27;s Science Lab&lt;/h1&gt;
+You could also head [[downstairs-&gt;atrium]], for all the good it&#x27;ll do.</tw-passagedata><tw-passagedata pid="8" name="herbertRoom" tags="" position="528,1098">&lt;h1&gt;Dr. Herbert&#x27;s Science Lab&lt;/h1&gt;
 [[Back to the hall-&gt;upstairsHallway]]
 
-</tw-passagedata><tw-passagedata pid="9" name="musicRoom" tags="" position="678.3333333333334,1098.3333333333335">&lt;h1&gt;The Music Room&lt;/h1&gt;
+</tw-passagedata><tw-passagedata pid="9" name="musicRoom" tags="" position="678,1098">&lt;h1&gt;The Music Room&lt;/h1&gt;
 You&#x27;ve never taken a music class at Dunnsmouth Secondary. In fact, you didn&#x27;t even know a music class existed. And judging by the dust coating these [[strange instruments-&gt;instruments]], the class hasn&#x27;t been offered in some time.
 
-[[Back to the hall.-&gt;upstairsHallway]]</tw-passagedata><tw-passagedata pid="10" name="velloc" tags="" position="828.3333333333334,1098.3333333333335">&lt;h1&gt;Mrs. Velloc&#x27;s Room&lt;/h1&gt;
+[[Back to the hall.-&gt;upstairsHallway]]</tw-passagedata><tw-passagedata pid="10" name="velloc" tags="" position="828,1098">&lt;h1&gt;Mrs. Velloc&#x27;s Room&lt;/h1&gt;
 Mrs. Velloc&#x27;s Practical Skills class is, I&#x27;m sure, the highlight of your school day. Who doesn&#x27;t enjoy spending an hour trying [[nets]]? 
 
 [[Back to the hall-&gt;upstairsHallway]]
-(display: &quot;inventory&quot;)</tw-passagedata><tw-passagedata pid="11" name="mathRoom" tags="" position="978.3333333333334,1098.3333333333335">&lt;h1&gt;Mr. Gint&#x27;s Room&lt;/h1&gt;
+(display: &quot;inventory&quot;)</tw-passagedata><tw-passagedata pid="11" name="mathRoom" tags="" position="978,1098">&lt;h1&gt;Mr. Gint&#x27;s Room&lt;/h1&gt;
 Poor Mr. Gint. I hope he&#x27;ll be well enough to teach geometry by Monday. 
 
 [[Back to hall-&gt;upstairsHallway]]
 (display: &quot;inventory&quot;)
-</tw-passagedata><tw-passagedata pid="12" name="atrium" tags="" position="763.3333333333334,695">&lt;h1&gt;The Atrium&lt;/h1&gt;
+</tw-passagedata><tw-passagedata pid="12" name="atrium" tags="" position="763,695">&lt;h1&gt;The Atrium&lt;/h1&gt;
 
 Now where are you going? 
 
@@ -143,14 +145,14 @@ Up the [[grand staircase-&gt;firstLanding]]?
 
 Or down the [[main hallway-&gt;firstFloorHall]]? 
 
-(And it&#x27;s still not too late to go [[home]].)</tw-passagedata><tw-passagedata pid="13" name="bleedingMan" tags="" position="996.6666666666667,431.6666666666667">Why, it&#x27;s Mr. Gint! &lt;span class=&quot;click&quot;  onclick=&#x27;swap(this)&#x27; alt=&quot;(Your non-Euclidean geometry teacher, a pale, balding man, who, if I may be frank, has demonstrated that he has as firm a grip on reality as he does on his hair follicles.)&quot;&gt;...&lt;/span&gt;
+(And it&#x27;s still not too late to go [[home]].)</tw-passagedata><tw-passagedata pid="13" name="bleedingMan" tags="" position="996,431">Why, it&#x27;s Mr. Gint! &lt;span class=&quot;click&quot;  onclick=&#x27;swap(this)&#x27; alt=&quot;(Your non-Euclidean geometry teacher, a pale, balding man, who, if I may be frank, has demonstrated that he has as firm a grip on reality as he does on his hair follicles.)&quot;&gt;...&lt;/span&gt;
 
-Though why he&#x27;s lying there on the floor, unconscious, in a large puddle of water, is anybody&#x27;s guess. 
+As to why he&#x27;s lying there on the floor, unconscious, in a large puddle of water, is anybody&#x27;s guess. 
 
 At least we know he&#x27;s not dead. That moaning is a good sign, though the blood leaking from his hairless skull is definitely *not*. And where&#x27;s all that [[water-&gt;waterOnStairs]] coming from? 
 
 Hmm. I suppose you&#x27;ll have to do *something* now.&lt;span class=&quot;click&quot;  onclick=&#x27;swap(this)&#x27; alt=&quot;Call 9-1-1? (That&#x27;s a joke. Cell phones have never worked in Dunnsmouth.)&quot;&gt;Call 9-1-1?&lt;/span&gt; Or [[try to wake him up?-&gt;wakingGint]]
-</tw-passagedata><tw-passagedata pid="14" name="wakingGint" tags="" position="1201.6666666666667,433.33333333333337">Harrison! Shaking a man and calling his name is not going to--
+</tw-passagedata><tw-passagedata pid="14" name="wakingGint" tags="" position="1201,433">Harrison! Shaking a man and calling his name is not going to--
 
 Oh. It worked. Never mind. 
 
@@ -162,7 +164,7 @@ Mr. Gint blinks up at you. &quot;I was knocked down... by something.&quot;
 
 &quot;No! Some *thing!* A wildish, toothy thing!&quot;
 
-Oh, poor Mr. Gint. He slipped in the water, conked his head, and now he&#x27;s delusional. Best [[help him out the door-&gt;helpGintToDoor]]--and close it behind you. No reason to [[question him further-&gt;questionGint]].</tw-passagedata><tw-passagedata pid="15" name="helpGintToDoor" tags="" position="1340,578.3333333333334">&lt;%story.state.gintGone = true;%&gt; Mr. Gint leans on you a bit, but makes it to the steps outside. He seems happy &lt;span class=&quot;click&quot; onclick=swap(this) alt=&quot;(or perhaps *relieved* is a better word)&quot;&gt; ...&lt;/span&gt; to be leaving the school.
+Oh, poor Mr. Gint. He slipped in the water, conked his head, and now he&#x27;s delusional. Best [[help him out the door-&gt;helpGintToDoor]]--and close it behind you. No reason to [[question him further-&gt;questionGint]].</tw-passagedata><tw-passagedata pid="15" name="helpGintToDoor" tags="" position="1340,578">&lt;%story.state.gintGone = true;%&gt; Mr. Gint leans on you a bit, but makes it to the steps outside. He seems happy &lt;span class=&quot;click&quot; onclick=swap(this) alt=&quot;(or perhaps *relieved* is a better word)&quot;&gt; ...&lt;/span&gt; to be leaving the school.
 
 Suddenly he wheels toward the door. &quot;I almost forgot! There are people inside!&quot;
 
@@ -176,18 +178,18 @@ Oh dear. I know you&#x27;re tempted to [[go back inside-&gt;atrium]]
 
 Mr. Gint shakes his head. &quot;Oh no. This was no dog.&quot; His eyes go wide. &quot;It had claws, and a snout like an alligator, and sharp teeth... and... and...&quot;
 
-&quot;It&#x27;s okay, Mr. Gint,&quot; you say. (And I approve of the kind tone of voice.) [[&quot;Take your time.&quot;-&gt;questionGint2]]</tw-passagedata><tw-passagedata pid="17" name="waterOnStairs" tags="" position="1035,281.6666666666667">Ah. The grand staircase that leads upstairs is positively slick with water, as if from some huge plumbing accident. I wouldn&#x27;t [[go up the stairs-&gt;firstLandingEarly]] to investigate. Just take care of [[that poor man on the floor-&gt;bleedingMan]].</tw-passagedata><tw-passagedata pid="18" name="firstLandingEarly" tags="" position="1205,281.6666666666667">My goodness. You have to go no further than the first landing to see what&#x27;s the matter. The huge fish tank that *usually* holds Dunnsmouth&#x27;s mascot, the noble thresher shark, has been cruelly smashed. Water and sea weed and quaint aquarium toys are everywhere. The mascot, however, is nowhere to be seen.
+&quot;It&#x27;s okay, Mr. Gint,&quot; you say. (And I approve of the kind tone of voice.) [[&quot;Take your time.&quot;-&gt;questionGint2]]</tw-passagedata><tw-passagedata pid="17" name="waterOnStairs" tags="" position="1035,281">Ah. The grand staircase that leads upstairs is positively slick with water, as if from some huge plumbing accident. I wouldn&#x27;t [[go up the stairs-&gt;firstLandingEarly]] to investigate. Just take care of [[that poor man on the floor-&gt;bleedingMan]].</tw-passagedata><tw-passagedata pid="18" name="firstLandingEarly" tags="" position="1205,281">My goodness. You have to go no further than the first landing to see what&#x27;s the matter. The huge fish tank that *usually* holds Dunnsmouth&#x27;s mascot, the noble thresher shark, has been cruelly smashed. Water and sea weed and quaint aquarium toys are everywhere. The mascot, however, is nowhere to be seen.
 
 Well, at least the liquid portion of the mystery is solved. Now if only [[Mr. Gint-&gt;bleedingMan]] would stop making such a racket.
 
-</tw-passagedata><tw-passagedata pid="19" name="backToSchool" tags="" position="555,726.6666666666667">This is ridiculous. I don&#x27;t see why you&#x27;re hurrying back to the school, huffing and puffing.
+</tw-passagedata><tw-passagedata pid="19" name="backToSchool" tags="" position="555,726">This is ridiculous. I don&#x27;t see why you&#x27;re hurrying back to the school, huffing and puffing.
 
 And see? The doors are closed now. Dunnsmouth Secondary is locked tight.
 
 Thank goodness you did the sensible thing by going home. 
 
 Good night, Harrison Squared.
-</tw-passagedata><tw-passagedata pid="20" name="firstFloorHall" tags="" position="1386.6666666666667,921.6666666666667">(if:(history:) contains &quot;waterOnStairs&quot;)[visited] (else:)[never]</tw-passagedata><tw-passagedata pid="21" name="firstLanding" tags="" position="980,860">&lt;%
+</tw-passagedata><tw-passagedata pid="20" name="firstFloorHall" tags="" position="1386,921">(if:(history:) contains &quot;waterOnStairs&quot;)[visited] (else:)[never]</tw-passagedata><tw-passagedata pid="21" name="firstLanding" tags="" position="980,860">&lt;%
 var s = &quot;The grand staircase is positively slick with water, as if from some huge plumbing accident. And at the first landing, you see why.\n\nThe huge fish tank that *usually* holds Dunnsmouth&#x27;s mascot, the noble thresher shark, has been cruelly smashed. Water and sea weed and quaint aquarium toys are everywhere. The mascot, however, is nowhere to be seen.&quot;
 
 if (isInHistory(&quot;waterOnStairs&quot;)) {
@@ -197,18 +199,18 @@ s = &quot;Please, walk carefully on these slick stairs! And don&#x27;t forget to
 
 &lt;%=s%&gt;
 
-Continue on to [[upstairs hall-&gt;upstairsHallway]] or go [[back downstairs-&gt;atrium]]?</tw-passagedata><tw-passagedata pid="22" name="instruments" tags="" position="678.3333333333334,1248.3333333333335">&lt;a onclick=&#x27;toggleInventory(this, &quot;a strange instrument&quot;);&#x27;&gt;Pick up a strange instrument.&lt;/a&gt;
+Continue on to [[upstairs hall-&gt;upstairsHallway]] or go [[back downstairs-&gt;atrium]]?</tw-passagedata><tw-passagedata pid="22" name="instruments" tags="" position="678,1248">&lt;a onclick=&#x27;toggleInventory(this, &quot;a strange instrument&quot;);&#x27;&gt;Pick up a strange instrument.&lt;/a&gt;
 
 [[Back to the hall-&gt;upstairsHallway]]
-</tw-passagedata><tw-passagedata pid="23" name="nets" tags="" position="828.3333333333334,1248.3333333333335">The current class project is a sturdy hemp net, twelve or fifteen feet in diameter. You&#x27;re responsible for a few of those knots yourself. 
+</tw-passagedata><tw-passagedata pid="23" name="nets" tags="" position="828,1248">The current class project is a sturdy hemp net, twelve or fifteen feet in diameter. You&#x27;re responsible for a few of those knots yourself. 
 
 Yes, I suppose you could [[fold up the net and bring it with you-&gt;getNet]] But why would you do that?
 
 [[Go back to the hall-&gt;upstairsHallway]]
-</tw-passagedata><tw-passagedata pid="24" name="getNet" tags="" position="828.3333333333334,1398.3333333333335">(set: $inventory to $inventory + (a: &quot;net&quot;))Okay, you&#x27;re now lugging around twenty-five pounds of net. Happy?
+</tw-passagedata><tw-passagedata pid="24" name="getNet" tags="" position="828,1398">(set: $inventory to $inventory + (a: &quot;net&quot;))Okay, you&#x27;re now lugging around twenty-five pounds of net. Happy?
 [[Back to hall-&gt;upstairsHallway]]
 (display: &quot;inventory&quot;)
-</tw-passagedata><tw-passagedata pid="25" name="inventory" tags="" position="420,873.3333333333334">&lt;div class=&quot;inventory&quot;&gt;(if: $inventory.length &gt; 1)[You&#x27;re carrying(if: $inventory contains &quot;net&quot;)[
+</tw-passagedata><tw-passagedata pid="25" name="inventory" tags="" position="420,873">&lt;div class=&quot;inventory&quot;&gt;(if: $inventory.length &gt; 1)[You&#x27;re carrying(if: $inventory contains &quot;net&quot;)[
 --a large net](if: $inventory contains &quot;meat&quot;)[
 --a hunk of ground meat](if: $inventory contains &quot;drugs&quot;)[
 --a handful of pills](if: $inventory contains &quot;instrument&quot;)[
@@ -225,11 +227,11 @@ Honestly, your guess is as good as mine, Harrison.
 
 &quot;That&#x27;s it!&quot; 
 
-Lucky guess.
+Lucky guess, Harrison.
 
-His eyelids flutter. I &quot;...that&#x27;s all I remember.&quot;
+His eyelids flutter. &quot;And that&#x27;s all I remember.&quot;
 
-Oh dear. I believe he&#x27;s going to pass out. You should [[help Mr. Gint to the door.-&gt;helpGintToDoor]]</tw-passagedata><tw-passagedata pid="27" name="helpGintToDoor2" tags="" position="1340,728.3333333333334">&quot;But what about you?&quot; you ask the man. 
+Oh dear. I believe he&#x27;s going to pass out. You should [[help Mr. Gint to the door.-&gt;helpGintToDoor]]</tw-passagedata><tw-passagedata pid="27" name="helpGintToDoor2" tags="" position="1340,728">&quot;But what about you?&quot; you ask the man. 
 
 &quot;I can get home by myself, my boy&lt;span class=&quot;click&quot; onclick=swap(this) alt=&quot;...(He&#x27;s never been certain of your name in class, and seems even less certain of it now.)&quot;&gt;...&lt;/span&gt;&quot; 
 
