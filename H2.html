@@ -7,15 +7,21 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="H2 and the Thing" startnode="42" creator="Twine" creator-version="2.0.2" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html {  
+<div id="passage"></div><tw-storydata name="H2 and the Thing" startnode="39" creator="Twine" creator-version="2.0.2" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html {  
 	background-image: linear-gradient(to bottom,  hsl(50, 33%, 98%), gray);
   background-image: -webkit-linear-gradient(top,  hsl(50, 33%, 98%), gray);
   background-attachment: fixed;
   background-color: black;
 }
+
+.blackBackground {
+	background-image:none;
+}
+
 h1 {color: gray; font-size: 1.5em}
 h2 {color: gray; font-size: 1.25em;}
 tw-link {color: #475EA3}
+div.inventory  {  
 	background-image: -webkit-linear-gradient(top,  hsl(50, 33%, 98%), black);
   background-attachment: fixed;
   background-color: black;
@@ -36,7 +42,8 @@ a {color: #475EA3;
 }  
 span.click { cursor: pointer; color: #475EA3; } 
 span.clicked {color: black; font-style: italic }
- </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.swap = function(text1, text2) {
+ 
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.swap = function(text1, text2) {
 return '<span class="click" onclick="swapSpan(this)" alt="' + text2 + '">' + text1 + '</span>';	
 }
 
@@ -104,6 +111,16 @@ window.inventoryItem = function(itemText) {
 	}
 	return "<a onclick='toggleInventory(this, \"" + itemText + "\")'>" + verb + " " + itemText + "</a>";
 }
+
+$(document).on("showpassage:after", function (e, passage) {
+	if (passage.passage.name == "falling") {
+		$("html").addClass("blackBackground");
+		$("#passage div").css("color", "white");
+	} else {
+		$("html").removeClass("blackBackground");
+	}
+});
+  
 </script><tw-passagedata pid="1" name="0utside" tags="" position="681,280">Out for a walk, are we? Excellent idea, Harrison. Keeps the blood flowing and all that, especially on such a blustery day. 
 
 Why not *keep* walking? 
