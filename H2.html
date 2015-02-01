@@ -18,6 +18,10 @@
 	background-image:none;
 }
 
+.blackBackground div {
+  color: white;
+}
+
 h1 {color: gray; font-size: 1.5em}
 h2 {color: gray; font-size: 1.25em;}
 tw-link {color: #475EA3}
@@ -43,6 +47,7 @@ a {color: #475EA3;
 span.click { cursor: pointer; color: #475EA3; } 
 span.clicked {color: black; font-style: italic }
  
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.swap = function(text1, text2) {
 return '<span class="click" onclick="swapSpan(this)" alt="' + text2 + '">' + text1 + '</span>';	
 }
@@ -55,10 +60,10 @@ window.swapSpan = function(el) {
 
 window.startFalling = function() {
 	$("#falling0").fadeOut(400, function() {
-	   $("#falling1").fadeIn().fadeOut(2000, function() {
-		    $("#falling2").fadeIn().fadeOut(2000, function () {
-			     $("#falling3").fadeIn().fadeOut(2000, function() {
-				      $("#falling4").fadeIn();
+	   $("#falling1").show().fadeOut(2000, function() {
+		    $("#falling2").show().fadeOut(2000, function () {
+			     $("#falling3").show().fadeOut(2000, function() {
+				      $("#falling4").show();
 				   });
 		     });
 		  });
@@ -83,7 +88,7 @@ window.showInventory = function() {
 	rv += "<p>You have are holding<br />";
    for (var i = 0; i < inventory.length; i++) { 
       rv += inventory[i] + "<br />";
-	 }
+	 } 
 	rv += "</div>"; 
 	$("#passage").append(rv).hide().fadeIn("slow");
 }       
@@ -115,12 +120,12 @@ window.inventoryItem = function(itemText) {
 $(document).on("showpassage:after", function (e, passage) {
 	if (passage.passage.name == "falling") {
 		$("html").addClass("blackBackground");
-		$("#passage div").css("color", "white");
 	} else {
 		$("html").removeClass("blackBackground");
 	}
 });
   
+
 </script><tw-passagedata pid="1" name="0utside" tags="" position="681,280">Out for a walk, are we? Excellent idea, Harrison. Keeps the blood flowing and all that, especially on such a blustery day. 
 
 Why not *keep* walking? 
