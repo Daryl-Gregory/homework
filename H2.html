@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="H2 and the Thing" startnode="44" creator="Twine" creator-version="2.0.2" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html {  
+<div id="passage"></div><tw-storydata name="H2 and the Thing" startnode="7" creator="Twine" creator-version="2.0.2" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html {  
 	background-image: linear-gradient(to bottom,  hsl(50, 33%, 98%), gray);
   background-image: -webkit-linear-gradient(top,  hsl(50, 33%, 98%), gray);
   background-attachment: fixed;
@@ -79,7 +79,7 @@ window.getHistory = function() {return story.history.join();}
 window.inventory = []  
 
 window.invItems = {
-"scalpel": {"pickUp": "There's no reason to take the doctor's scalpel", "drop": "Why don't you drop that scary scalpel?", "description": "A gleaming scalpel in your back pocket."},
+"scalpel": {"pickUp": "There's no reason to take the doctor's scalpel.", "drop": "Why don't you drop that scary scalpel?", "description": "A gleaming scalpel in your back pocket."},
 
 "net": {"pickUp": "I suppose you could pick up that large net.", "drop": "You could always let go of that large net.", "description": "A large hemp net, looped manfully over your shoulder."}, 
 	
@@ -181,13 +181,15 @@ In my opinion, the yellowish, muted lights and cold granite floors lend a *conte
 
 Though it&#x27;s hard to contemplate anything with that all that moaning coming from that [[man-&gt;bleedingMan]] lying on the floor at the base of the staircase. (Perhaps I should have mentioned him earlier?)</tw-passagedata><tw-passagedata pid="6" name="dreams" tags="" position="421,579">
 Sleep tight, Harrison Squared. Sleep tight. </tw-passagedata><tw-passagedata pid="7" name="upstairsHallway" tags="" position="761,853">&lt;h1&gt;Upstairs Hallway&lt;/h1&gt;
-This long row of classrooms is familiar to you, I&#x27;m sure, but I&#x27;d advise against going into any of them. 
+The corridor is quite familiar to you, I&#x27;m sure, considering most of your classes are located here. Though someone is going to have to mop up those watery tracks&lt;%=swap(&#x27;...&#x27;, &quot;... which seem to lead in &lt;i&gt;both&lt;/i&gt; directions down this hallway. Curious.&quot;)%&gt;
 
-Not [[Dr. Herbert&#x27;s lab-&gt;herbertRoom]] or the [[The music room-&gt;musicRoom]]. 
+To the north is [[Dr. Herbert&#x27;s lab-&gt;herbertRoom]] and the [[The music room-&gt;musicRoom]]. 
 
-I would certainly avoid [[Ms. Velloc&#x27;s room-&gt;velloc]] and [[poor Mr. Gint&#x27;s room-&gt;mathRoom]].
+South is [[Ms. Velloc&#x27;s room-&gt;velloc]] and [[poor Mr. Gint&#x27;s room-&gt;mathRoom]].
 
-If you insist, you could march down to the [[end of the hall-&gt;upstairsEndHall]]. But *I* would advise heading [[downstairs-&gt;atrium]]. (It&#x27;s closer to the door.)</tw-passagedata><tw-passagedata pid="8" name="herbertRoom" tags="" position="528,1098">&lt;h1&gt;Dr. Herbert&#x27;s Science Lab&lt;/h1&gt;
+I&#x27;d advise going into any of them. 
+
+Yes, you could march down to the [[end of the hall-&gt;upstairsEndHall]]. But *I* would suggest heading [[downstairs-&gt;atrium]] -- because it&#x27;s one step closer to the exit!</tw-passagedata><tw-passagedata pid="8" name="herbertRoom" tags="" position="528,1098">&lt;h1&gt;Dr. Herbert&#x27;s Science Lab&lt;/h1&gt;
 The science lab of Dr. Herbert, your cryptobiology teacher. Yes, he&#x27;s a man of, shall we say, *odd* interests. That looks like his [[latest project-&gt;herbertProject]] on his desk. 
 
 All done snooping, you impolite boy? Best head back to the [[hallway-&gt;upstairsHallway]].
@@ -214,9 +216,9 @@ Ah well. Don&#x27;t you worry *your* pretty little head about it. I&#x27;m sure 
 
 Now where are you going? 
 
-Up the [[grand staircase-&gt;firstLanding]]? 
+Follow the water up the [[grand staircase-&gt;firstLanding]]? 
 
-Or down the [[main hallway-&gt;firstFloorHall]]? 
+Or make haste down the [[main hallway-&gt;firstFloorHall]], toward the cafeteria and what not? 
 
 (And it&#x27;s still not too late to go [[home]].)</tw-passagedata><tw-passagedata pid="13" name="bleedingMan" tags="" position="996,431">Why, it&#x27;s Mr. Gint! &lt;%=swap(&quot;...&quot;, &quot;(Your non-Euclidean geometry teacher, a pale, balding man, who, if I may be frank, has demonstrated that he has as firm a grip on reality as he does on his hair follicles.)&quot;)%&gt;
 
@@ -277,7 +279,9 @@ s = &quot;Please, walk carefully on these slick stairs! And don&#x27;t forget to
 
 &lt;%=s%&gt;
 
-Continue on to [[upstairs hall-&gt;upstairsHallway]] or go [[back downstairs-&gt;atrium]]?</tw-passagedata><tw-passagedata pid="22" name="flukehorn" tags="" position="678,1248">You&#x27;ve never heard of the the flukehorn? Sigh. I forget that you&#x27;re not from around here. 
+But here&#x27;s another odd thing: there&#x27;s water on the steps leading *up.* So, either multiple people have tromped through the aquarium water and tracked it up the stairs, or&lt;%=swap(&#x27;...&#x27;,&#x27;... it was one person with very large feet.&#x27;)%&gt;  
+
+Continue on to [[the upstairs hall-&gt;upstairsHallway]] or go back [[downstairs-&gt;atrium]]?</tw-passagedata><tw-passagedata pid="22" name="flukehorn" tags="" position="678,1248">You&#x27;ve never heard of the the flukehorn? Sigh. I forget that you&#x27;re not from around here. 
 
 Ahem. The multi-bladed double bass flukehorn is a metal and mahogany cousin to the bassoon, invented in 1876 by Dunnsmouth&#x27;s first (and last) orchestra conductor, Percival Thropp, a man who loved music more than life itself&lt;%=swap(&#x27;...&#x27;, &#x27;... And in retrospect, more than the lives of his family.&#x27;)%&gt;
 
@@ -314,9 +318,9 @@ Oh dear. I believe he&#x27;s going to pass out. You should [[help Mr. Gint to th
 
 Then, holding his hand to the back of his head, he walks down the hill toward town. 
 
-Mr. Gint&#x27;s probably suffering from a concussion and is clearly confused. How many people can be in the school on a Saturday?
+Mr. Gint&#x27;s probably suffering from a concussion and is clearly confused. How many people can be in the school on a Saturday? And if there are, these adults can take care of themselves. There&#x27;s not reason to go [[back inside-&gt;atrium]].
 
-Why don&#x27;t you follow your teacher&#x27;s suggestion and head [[home]] yourself! There&#x27;s no reason to go [[back inside-&gt;atrium]]!</tw-passagedata><tw-passagedata pid="27" name="principalOffice" tags="" position="1552,920">&lt;h1&gt;The Principal&#x27;s Office&lt;/h1&gt;
+Why don&#x27;t you follow your teacher&#x27;s example and head [[home]] yourself!</tw-passagedata><tw-passagedata pid="27" name="principalOffice" tags="" position="1552,920">&lt;h1&gt;The Principal&#x27;s Office&lt;/h1&gt;
 
 Stenciled on the frosted glass window of the door are the words OFFICE OF THE PRINCIPAL&lt;%=swap(&#x27;...&#x27;,&#x27;.... not to be confused with the principle office.&#x27;)%&gt;
 
