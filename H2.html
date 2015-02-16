@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="H2 and the Thing" startnode="9" creator="Twine" creator-version="2.0.2" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {  
+<div id="passage"></div><tw-storydata name="H2 and the Thing" startnode="8" creator="Twine" creator-version="2.0.2" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {  
 	background-color: rgb(40, 33, 19);
 		background:   url("https://darylgregory.files.wordpress.com/2015/02/h2paperbackground41.jpg");
 background-repeat: repeat;
@@ -47,9 +47,8 @@ a {color: #AB4214;
 	border-bottom: none; 
 	cursor: pointer;
 }  
-span.click { cursor: pointer; color: #475EA3; } 
-span.clicked {color: black; font-size:smaller} 
-
+span.click { cursor: pointer; color: #AB4214; } 
+span.clicked {color: black;} 
 
 .horn:not(old) {
 	width: 100px;
@@ -85,6 +84,8 @@ width:50%;
 overflow:hidden;
 } 
  </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.hornTries = 0;
+window.selfEsteem = 0;
+window.selfEsteemKeys = [];
 
 window.swap = function(text1, text2) {
 return '<span class="click" onclick="swapSpan(this)" alt="' + text2 + '">' + text1 + '</span>';	
@@ -96,18 +97,41 @@ window.swapSpan = function(el) {
     $(el).addClass('clicked');
 }
 
+window.swapEsteem = function(key, text1,  points) {
+	if ($.inArray(key, selfEsteemKeys) == -1) {
+		return '<span class="click" onclick="swapEsteemSpan(this)" points="' + points + '" key="' + key + '">' + text1 + '</span>';	
+	}
+	return "";
+}
+
+window.swapEsteemSpan = function(el) {
+  var key = $(el).attr("key");
+	if ($.inArray(key, selfEsteemKeys) > -1) {
+			var plural = selfEsteem == 1 ? "" : "s";
+		return $(el).html("You have " + selfEsteem + " point" + plural + ".").fadeOut(5000);
+	}
+	selfEsteemKeys.push(key);
+	var points = parseInt($(el).attr("points"));
+	selfEsteem = selfEsteem + points;
+		var plural2 = points == 1 ? "" : "s";
+	  var plural3 = selfEsteem == 1 ? "" : "s";
+	$(el).html("+" + points + " point" + plural2 + ". You now have " + selfEsteem + " point" + plural3 + ".").fadeOut(5000);
+	$(el).removeClass('click');
+  $(el).addClass('clicked');
+}
+
+
 window.startFalling = function() {
 	$("#falling0").fadeOut(400, function() {
 	   $("#falling1").show().fadeOut(2000, function() {
 		    $("#falling2").show().fadeOut(2000, function () {
 			     $("#falling3").show().fadeOut(2000, function() {
 				      $("#falling4").show();
-				   });
+	 			   });
 		     });
 		  });
 	 });
 }
-
 
 window.isInHistory = function(passageName) {
 	var p = _.findWhere(story.passages, { name: passageName });
@@ -145,6 +169,8 @@ window.showInventory = function() {
 		 	s += "<br />";
 	 	}
 	}
+	var plural = selfEsteem == 1 ? "" : "s";
+	s += "<br />You are also the proud owner of <b>" + selfEsteem + "</b> self esteem point" + plural + ".";
 	s += "</p></div>"; 
 	$("#passage").append(s).hide().fadeIn("slow");
 }       
@@ -253,11 +279,9 @@ window.blow = function() {
 } 
 
 window.fibCheck = function(el) {
-	var message = $(el).val() == 55 ? "Exactly! Well done. <br/><br/>But this raises another question: Why would your humble narrator take time out of this busy adventure of yours to discuss a math concept? Oh well. Another mystery." : "I guess math isn't your <i>thing</i>, as the kids say. Try again. Or don't. It doesn't matter to me.";
+	var message = $(el).val() == 55 ? "Exactly! Well done. <br/><br/>But this raises another question: Why would your humble narrator take time out of this busy adventure of yours to discuss a math concept? Oh well. Another mystery. <span class='click' onclick='swapEsteemSpan(this)' points='5' key='sequence'>Give yourself 5 points.</span>" : "I guess math isn't your <i>thing</i>, as the kids say. Try again. Or don't. It doesn't matter to me.";
 $("#fibResult").html(message);
 }
-
-
  
 $(document).on("showpassage:after", function(e, passage) {
 	if (passage.passage.name == "falling") {
@@ -265,7 +289,8 @@ $(document).on("showpassage:after", function(e, passage) {
 	} else {
 		$("html").removeClass("blackBackground");
 	}
-});    </script><tw-passagedata pid="1" name="0utside" tags="" position="681,280">Out for a walk, are we? Excellent idea, Harrison. Keeps the blood flowing and all that, especially on such a blustery day. 
+});    
+  </script><tw-passagedata pid="1" name="0utside" tags="" position="681,280">Out for a walk, are we? Excellent idea, Harrison. Keeps the blood flowing and all that, especially on such a blustery day. 
 
 Why not *keep* walking? 
 
@@ -304,14 +329,14 @@ Though it&#x27;s hard to contemplate anything with that all that moaning coming 
 Sleep tight, Harrison Squared. Sleep tight. </tw-passagedata><tw-passagedata pid="7" name="upstairsHallway" tags="" position="761,853">&lt;h1&gt;Upstairs Hallway&lt;/h1&gt;
 The corridor is quite familiar to you, I&#x27;m sure, considering most of your classes are located here. Though someone is going to have to mop up those watery tracks&lt;%=swap(&#x27;...&#x27;, &quot;... which seem to lead in &lt;i&gt;both&lt;/i&gt; directions down this hallway. Curious.&quot;)%&gt;
 
-To the north is [[Dr. Herbert&#x27;s lab-&gt;herbertDoor]] and the [[music room-&gt;musicRoomDoor]]. 
+To the north is [[Dr. Herbert&#x27;s lab-&gt;herbertDoor]] and [[poor Mr. Gint&#x27;s room-&gt;mathRoom]].
 
-South is [[Ms. Velloc&#x27;s room-&gt;vellocDoor]] and [[poor Mr. Gint&#x27;s room-&gt;mathRoom]].
+South is [[Ms. Velloc&#x27;s room-&gt;vellocDoor]] and the [[music room-&gt;musicRoomDoor]]. 
 
 I&#x27;d advise against going into any of them. 
 
 Yes, you could march down to the [[end of the hall-&gt;upstairsEndHall]]. But *I* would suggest heading [[downstairs-&gt;atrium]] -- because it&#x27;s one step closer to the exit!</tw-passagedata><tw-passagedata pid="8" name="herbertRoom" tags="" position="342,1067">&lt;h1&gt;Dr. Herbert&#x27;s Science Lab&lt;/h1&gt;
-You don&#x27;t see anyone inside. What a relief! 
+You don&#x27;t see anyone inside. What a relief! &lt;%=swapEsteem(&quot;herbertRoom&quot;, &quot;Give yourself a self-esteem point for checking the room.&quot;, 1)%&gt;
 
 You never know what you might find here. Dr. Herbert, your cryptobiology teacher, is a man of, shall we say, *odd* interests. That looks like his [[latest project-&gt;herbertProject]] on his desk. 
 
@@ -321,6 +346,8 @@ All done snooping, you impolite boy? Best head back to the [[hallway-&gt;upstair
 
 Is there anything sadder than a room full of empty music stands? &lt;%=swap(&quot;...&quot;, &quot;Yes, I suppose a room full of starving kittens would trump that. Good point.&quot;)%&gt; 
 
+In any case, there&#x27;s no one here. &lt;%=swapEsteem(&quot;musicRoom&quot;, &quot;Give yourself a self-esteem point for checking the room.&quot;, 1)%&gt;
+
 You&#x27;ve never taken a music class at Dunnsmouth Secondary, and judging by the dust and cobwebs coating these instruments, neither has anyone else--at least not in years. Cracked trumpets, dismembered trombones, a gap-toothed xylophone, the noble &lt;%=isInHistory(&quot;flukehorn&quot;) ? &quot;[[flukehorn...-&gt;flukehornAfter]]&quot;: &quot;[[flukehorn...-&gt;flukehorn]]&quot;%&gt;
 
 &lt;%=inventoryItem(&quot;instrument&quot;)%&gt;
@@ -328,15 +355,15 @@ You&#x27;ve never taken a music class at Dunnsmouth Secondary, and judging by th
 [[Back to the hall.-&gt;upstairsHallway]]</tw-passagedata><tw-passagedata pid="10" name="velloc" tags="" position="832,1177">&lt;h1&gt;Mrs. Velloc&#x27;s Room&lt;/h1&gt;
 Mrs. Velloc&#x27;s Practical Skills class is, I&#x27;m sure, the highlight of your school day. Rows and rows of students, blissfully tying together [[nets]]. It&#x27;s the essence of community spirit, don&#x27;t you think? Plus, who doesn&#x27;t appreciate a good knot? 
 
+&lt;%=swapEsteem(&quot;velloc&quot;, &quot;Speaking of appreciation, give yourself a self-esteem point for checking the room.&quot;, 1)%&gt;
+
 [[Back to the hall-&gt;upstairsHallway]]
 </tw-passagedata><tw-passagedata pid="11" name="mathRoom" tags="" position="1000,1048">&lt;h1&gt;Mr. Gint&#x27;s Room&lt;/h1&gt;
-The door is wide open, but oddly, the watery tracks do not lead inside. 
-
-That&#x27;s probably a good thing for poor Mr. Gint. I do believe his head was in sorry enough shape before he cracked it on the floor. Just look at those equations scrawled across the board&lt;%=swap(&#x27;...&#x27;,&#x27;... and walls&#x27;)%&gt;&lt;%=swap(&#x27;...&#x27;, &#x27;... and a bit of the ceiling.&#x27;)%&gt; 
+The door is wide open, but the watery tracks do not lead inside. That&#x27;s probably a good thing for poor Mr. Gint. I do believe his head was in sorry enough shape before he cracked it on the floor. Just look at those equations scrawled across the board&lt;%=swap(&#x27;...&#x27;,&#x27;... and walls&#x27;)%&gt;&lt;%=swap(&#x27;...&#x27;, &#x27;... and a bit of the ceiling.&#x27;)%&gt; 
 
 You&#x27;re right -- he does seem particularly obsessed with a [[certain sequence of numbers-&gt;sequence]].
 
-Ah well. Don&#x27;t you worry *your* pretty little head about it. I&#x27;m sure he&#x27;ll be ready to teach your non-Euclidean geometry class by Monday. 
+Ah well. Don&#x27;t you worry *your* pretty little head about it. I&#x27;m sure he&#x27;ll be ready to teach your non-Euclidean geometry class by Monday &lt;%=swapEsteem(&quot;mathRoom&quot;, &quot;Don&#x27;t forget to give yourself a self-esteem point for making sure the room is empty.&quot;, 1)%&gt;
 
 [[Back to hall-&gt;upstairsHallway]]
 </tw-passagedata><tw-passagedata pid="12" name="atrium" tags="" position="763,695">&lt;h1&gt;The Atrium&lt;/h1&gt;
@@ -578,9 +605,9 @@ var s = story.state.canPlayHorn ? &quot;You already know how to play the horn. B
 Select your six apertures and&lt;div onclick=&#x27;blow()&#x27; style=&quot;font-size: 2em; cursor: pointer; color: #AB4214&quot;&gt;blow&lt;/div&gt;
 &lt;div style=&quot;margin-top:2em&quot; id=&quot;hornResult&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="50" name="sequence" tags="" position="1000,1198">That sequence -- 8, 13, 21, 34, and so on, is known as the Fibonacci Sequence. 
+</tw-passagedata><tw-passagedata pid="50" name="sequence" tags="" position="1000,1198">That sequence--8, 13, 21, 34, and so on--is known as the Fibonacci Sequence. 
 
-It&#x27;s created by taking a number, adding the previous number to it, to determine the next in the sequence. So, 8 + 13 = 21. 13 + 21 = 34, etc. Lovely, isn&#x27;t it? 
+To find the next number in the sequence, simply take the current number and add the previous number to it. So, 8 + 13 = 21. 13 + 21 = 34, etc. Lovely, isn&#x27;t it? 
 
 So after 34, the next number would be...&lt;input id=&#x27;fibTest&#x27; type=&#x27;text&#x27; onchange=&#x27;fibCheck(this)&#x27; width=&#x27;10px&#x27; placeholder=&#x27;type and hit enter&#x27; /&gt;?
 &lt;div id=&#x27;fibResult&#x27;&gt;&lt;/div&gt;
