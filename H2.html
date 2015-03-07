@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="86" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
+<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="57" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
     font-family: 'Special Elite';
     font-style: normal;
     font-weight: 400;
@@ -590,7 +590,7 @@ Ah, the room where the students take their lunch&lt;%=swap(&quot;...&quot;,&quot
 &lt;%=swapEsteem(&quot;cafetorium&quot;, &quot;And yes, might as well give yourself a self-esteem point for checking this room.&quot;, 1)%&gt;
 
 Where to? Through the wide doorway behind the serving station leads to the [[kitchen]]? Or back to [[the hallway?-&gt;firstFloorHall]]</tw-passagedata><tw-passagedata pid="28" name="intersection" tags="" position="1253,1078">&lt;%
-var intro = (isInHistory(&quot;firstLanding&quot;)) ? &quot;Alas, there are no watery tracks to lead us in any particular direction. There are, however,&quot; : &quot;So many choices! There are&quot;;
+var intro = (isInHistory(&quot;firstLanding&quot;)) ? &quot;But alas, there are no watery tracks to lead us in any particular direction. There are, however,&quot; : &quot;But now there are so many choices! There are&quot;;
 
 var matilda = isInHistory(&quot;Matilda3&quot;) ? &quot;[[a dark hall-&gt;darkHallDoor]]&quot; : &quot;[[a dark hall-&gt;matilda]]&quot;;
 
@@ -599,7 +599,7 @@ var outerLoop = isInHistory(&quot;outerLoop&quot;) ? &quot;a section of wall thi
 %&gt;
 &lt;h1&gt;The Confusing Bit&lt;/h1&gt;
 
-I&#x27;m a little turned around here, honestly. 
+I&#x27;m a little turned around here, honestly. You&#x27;re on the first floor, that&#x27;s for certain.
 
 &lt;%=intro%&gt; [[stairs leading up-&gt;upstairsEndHall]]...
 
@@ -653,16 +653,16 @@ This corridor seems to go on for quite a distance. After several turns (not all 
 Besides, all the medications are gone. That&#x27;s odd. Someone will have to speak to Nurse Mandi about that. 
 
 [[Close the cabinet.-&gt;nurseOffice]]
-</tw-passagedata><tw-passagedata pid="34" name="upstairsEndHall" tags="" position="752,1551">&lt;h1&gt;The end of the hall&lt;/h1&gt;
+</tw-passagedata><tw-passagedata pid="34" name="upstairsEndHall" tags="" position="752,1551">&lt;h1&gt;The End of the 2nd Floor Hall&lt;/h1&gt;
 
-Congratulations, you&#x27;ve followed the watery footsteps all the way to the end of the second story hall, the home of (a) a wall, and (b) the narrower, grimier cousin to the grand staircase&lt;%=swap(&#x27;...&#x27;,&quot;... (cousins perhaps, but they&#x27;ve never liked each other)&quot;)%&gt;
+Congratulations, you&#x27;ve reached the narrower, grimier end of the second story hall. It&#x27;s the home to a set of stairs &lt;%=swap(&#x27;...&#x27;,&quot;... the narrower, grimier cousin to the grand staircase (and like many cousins, they don&#x27;t like each other much)&quot;)%&gt; that leads down to the main floor.
 
 &lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/thresher_1100x742.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/thresher_500x322.png&quot; /&gt;&lt;/a&gt;
 Oh. And one other thing. There&#x27;s a dead thresher shark here. &lt;%=inventoryItem(&quot;shark&quot;)%&gt; 
 
-Why don&#x27;t you [[head back to the classrooms-&gt;upstairsHallway]]?
+You could head [[toward the classrooms-&gt;upstairsHallway]] (and ultimately the grand staircase).
 
-Or, if you insist, you could follow the rapidly evaporating footsteps down the stairs to the [[main hallway-&gt;intersection]].</tw-passagedata><tw-passagedata pid="35" name="darkHall" tags="" position="1400,1809">&lt;% var s = isInHistory(&quot;Matilda3&quot;) ? &quot;Matilda&#x27;s probably still on the other side, mopping away.&quot; : &quot;&quot;;
+Or, if you insist, you could follow a set of rapidly evaporating footsteps down the stairs to the [[first floor main hallway.-&gt;intersection]]</tw-passagedata><tw-passagedata pid="35" name="darkHall" tags="" position="1400,1809">&lt;% var s = isInHistory(&quot;Matilda3&quot;) ? &quot;Matilda&#x27;s probably still on the other side, mopping away.&quot; : &quot;&quot;;
 %&gt;
 &lt;h1&gt;A rather dimly lit corridor&lt;/h1&gt;
 
