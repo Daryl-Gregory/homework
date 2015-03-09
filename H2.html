@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="116" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
+<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="89" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
     font-family: 'Special Elite';
     font-style: normal;
     font-weight: 400;
@@ -1106,7 +1106,7 @@ The creature shuffles forward, [[and then-&gt;enochAttacks]]--</tw-passagedata><
 
 The creature bites down on Joab&#x27;s arm. The man screams and drops the flashlight. It rolls toward the pit, casting wild shadows against the wall. 
 
-Good heavens, hat will you do? [[Grab the flashlight before it falls?-&gt;grabFlashlight]]
+Good heavens, what will you do? [[Grab the flashlight before it falls?-&gt;grabFlashlight]]
 
 Or [[try to save Joab?-&gt;fightEnoch]]</tw-passagedata><tw-passagedata pid="87" name="grabFlashlight" tags="" position="1564,2728">You snatch up the flashlight just as it starts to tumble into the abyss, swing the light around--
 
@@ -1125,10 +1125,18 @@ And now you are [[left alone with the monster.-&gt;leftAloneWithEnoch]]
 
 [[attackEnochBlowHorn]]
 
-[[attackEnochWithFists]]</tw-passagedata><tw-passagedata pid="89" name="followEnochAngry" tags="" position="1586,2893">[[fightAngryEnoch]]
+[[attackEnochWithFists]]</tw-passagedata><tw-passagedata pid="89" name="followEnochAngry" tags="" position="1581,2877">&lt;h1&gt;The Long, Twisty Bit&lt;/h1&gt;
+Of all the ideas you&#x27;ve had today, this has to be the worst. 
 
-[[helpJoabInPit]]</tw-passagedata><tw-passagedata pid="90" name="helpJoabInPit" tags="" position="1237,2893">&lt;%inventory.push(&quot;net&quot;); inventory.push(&quot;scalpel&quot;);%&gt;
-Good choice.
+Thanks to the flashlight, you can see where the creature&lt;%=swap(&quot;...&quot;, &quot;... pardon me: &lt;i&gt;Enoch&lt;/i&gt;...&quot;)%&gt; ran off to. He&#x27;s there in the distance, and he seems to be dragging something behind him. 
+
+Ah. That something is a tail. It seems Enoch has changed more than I thought.
+
+He vanishes around a corner. Do you want to [[keep following?-&gt;fightAngryEnoch]]
+
+Or go back and [[help Joab?-&gt;helpJoabInPit]]
+
+&lt;%inventory.push(&quot;net&quot;);inventory.push(&quot;scalpel&quot;);inventory.push(&quot;instrument&quot;);story.state.canPlayHorn = true; inventory.push(&quot;pen&quot;);inventory.push(&quot;paper&quot;);%&gt;</tw-passagedata><tw-passagedata pid="90" name="helpJoabInPit" tags="" position="1237,2893">Good choice.
 
 You peer over the lip of the hole, and shine the flashlight into its depths. 
 
@@ -1169,19 +1177,40 @@ But [[where is the creature?-&gt;emptyPoolEnding]]</tw-passagedata><tw-passageda
 
 This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
 
-&lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="95" name="fightAngryEnoch" tags="" position="1699,3121">[[attackAngryEnochWithScalpel]]
+&lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="95" name="fightAngryEnoch" tags="" position="1699,3121">You creep around the corner, listening for Enoch&#x27;s heavy tread...
 
-[[attackAngryEnochWithHorn]]
+And the creature leaps at you out of the dark! &lt;%=swap(&quot;...&quot;, &quot;... Evidently, he didn&#x27;t like you following him.&quot;)%&gt;
 
-If net [[attackAngryEnochWithNet]]
+There&#x27;s no place to run. You have time to do only one thing. But what?
 
-[[attackAngryEnochBlowHorn]]
+[[Punch him in the snout?-&gt;attackAngryEnochWithFists]]
 
-[[attackAngryEnochWithFists]]</tw-passagedata><tw-passagedata pid="96" name="attackAngryEnochWithScalpel" tags="" position="1588,3432">[[die]]</tw-passagedata><tw-passagedata pid="97" name="attackAngryEnochWithHorn" tags="" position="1713,3432">[[die]]</tw-passagedata><tw-passagedata pid="98" name="attackAngryEnochWithNet" tags="" position="1838.0001,3433">[[die]]</tw-passagedata><tw-passagedata pid="99" name="attackAngryEnochBlowHorn" tags="" position="1430,2988">[[followAngryEnoch]]
+[[Die early?-&gt;die]]
+&lt;%= isInInventory(&quot;scalpel&quot;) ? &quot;&lt;br/&gt;&lt;br/&gt;[[Stab him with Dr. Herbert&#x27;s scalpel?-&gt;attackAngryEnochWithScalpel]]&quot; : &quot;&quot;%&gt;&lt;%= isInInventory(&quot;net&quot;) ? &quot;&lt;br/&gt;&lt;br/&gt;[[Throw the net over him?-&gt;attackAngryEnochWithNet]]&quot; : &quot;&quot;%&gt;
+&lt;%= isInInventory(&quot;instrument&quot;) ? &quot;&lt;br/&gt;&lt;br/&gt;[[Bop him with the flukehorn?-&gt;attackAngryEnochWithHorn]]&quot;  : &quot;&quot;%&gt;
+&lt;%= isInInventory(&quot;instrument&quot;) &amp;&amp; story.state.canPlayHorn ? &quot;&lt;br/&gt;&lt;br/&gt;[[Blow in the flukehorn?-&gt;attackAngryEnochBlowHorn]]&quot;  : &quot;&quot;%&gt;</tw-passagedata><tw-passagedata pid="96" name="attackAngryEnochWithScalpel" tags="" position="1588,3432">That scalpel makes for a better scientific instrument than a weapon. Especially against an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt; 
 
-[[helpJoabInPit]]</tw-passagedata><tw-passagedata pid="100" name="die" tags="" position="1658,3635">if pen and paper [[changeStory]]
+The blade bounces off Enoch&#x27;s scaly hide, and he bats it out of your hand. Then he fastens his claws around your neck. 
 
-&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="101" name="attackEnochWithScalpel" tags="" position="1894,2871">remove scalpel
+And now, there&#x27;s only [[one thing left for you to do.-&gt;die]]</tw-passagedata><tw-passagedata pid="97" name="attackAngryEnochWithHorn" tags="" position="1713,3432">Well, that&#x27;s one terrible idea that didn&#x27;t work out. 
+
+The flukhorn, while dangerously sharp&lt;%=swap(&quot;...&quot;,&quot;....(that&#x27;s a musical joke)&quot;)%&gt; is no match for an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt; 
+
+The horn bounces off Enoch&#x27;s scaly hide, and he bats it out of your hand. Then he fastens his claws around your neck. 
+
+And now, there&#x27;s only [[one thing left for you to do.-&gt;die]]</tw-passagedata><tw-passagedata pid="98" name="attackAngryEnochWithNet" tags="" position="1838,3433">Alas, you are no Roman gladiator, and Enoch is no dumb fish. 
+
+He easily bats aside the net, and fastens his claws around your neck. 
+
+And now, there&#x27;s only [[one thing left for you to do.-&gt;die]]</tw-passagedata><tw-passagedata pid="99" name="attackAngryEnochBlowHorn" tags="" position="1430,2988">[[followAngryEnoch]]
+
+</tw-passagedata><tw-passagedata pid="100" name="die" tags="" position="1658,3635">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt;I&#x27;m very sorry, Harrison, but you&#x27;ve made the title of this game more true than I would have liked. You&#x27;re dead&lt;%=swap(&quot;...&quot;,&quot;... kaput&quot;)%&gt; &lt;%=swap(&quot; ...&quot;,&quot;...  expired&quot;)%&gt;&lt;%=swap(&quot; ...&quot;,&quot;... gone to join the choir eternal&quot;)%&gt;&lt;%=swap(&quot; ...&quot;,&quot;... etcetera, etcetera.&quot;)%&gt;
+
+This case may not have resolved satisfactorily, but perhaps others will investigate your demise. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+
+&lt;h1&gt;The End&lt;/h1&gt;
+
+&lt;%= isInInventory(&quot;pen&quot;) &amp;&amp; isInInventory(&quot;paper&quot;) ? &quot;[[Unless...-&gt;changeStory]]&quot; : &quot;&quot;%&gt;</tw-passagedata><tw-passagedata pid="101" name="attackEnochWithScalpel" tags="" position="1894,2871">remove scalpel
 [[falling]]</tw-passagedata><tw-passagedata pid="102" name="attackEnochWithHorn" tags="" position="2041,2875">remove horn
 
 [[falling]]</tw-passagedata><tw-passagedata pid="103" name="attackEnochWithNet" tags="" position="2225,2885">remove net
@@ -1204,13 +1233,23 @@ What was Enoch looking for? Freedom? Companionship with others like himself? We 
 
 This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
 
-&lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="117" name="followAngryEnoch" tags="" position="1430,3117">[[angryEnochFreedom]]</tw-passagedata><tw-passagedata pid="118" name="angryEnochFreedom" tags="" position="1422,3282">[[helpJoabInPit]]
+&lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="117" name="followAngryEnoch" tags="" position="1430,3117">[[angryEnochFreedom]]</tw-passagedata><tw-passagedata pid="118" name="angryEnochFreedom" tags="" position="1404,3286">[[helpJoabInPit]]
 
 &lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_1200x927.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_500x386.png&quot; /&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="119" name="kitchenSecondVisit" tags="" position="1411,1309">&lt;h1&gt;The Kitchen&lt;/h1&gt;
 
 The three cafeteria ladies are still hard at work. 
  
-&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot-&gt;giveShark]] Better if you [[leave.-&gt;cafetorium]]&quot; : &quot;\&quot;Didn&#x27;t we tell you to scat?,\&quot; the oldest lady says. \&quot;Don&#x27;t come back til you&#x27;ve found us some fresh fish!\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="120" name="attackEnochWithFists" tags="" position="1769,2872">[[falling]]</tw-passagedata><tw-passagedata pid="121" name="attackAngryEnochWithFists" tags="" position="1463,3433">[[die]]</tw-passagedata><tw-passagedata pid="122" name="changeStory" tags="" position="1658,3785">[[enochAttacks]]</tw-passagedata><tw-passagedata pid="123" name="leftAloneWithEnoch" tags="" position="1400,2766">Enoch stares for a moment at the hole, and makes a sound that is at once mournful and angry. Then he turns and runs out of the chamber. 
+&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot-&gt;giveShark]] Better if you [[leave.-&gt;cafetorium]]&quot; : &quot;\&quot;Didn&#x27;t we tell you to scat?,\&quot; the oldest lady says. \&quot;Don&#x27;t come back til you&#x27;ve found us some fresh fish!\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="120" name="attackEnochWithFists" tags="" position="1769,2872">[[falling]]</tw-passagedata><tw-passagedata pid="121" name="attackAngryEnochWithFists" tags="" position="1463,3433">Alas, your tiny human fists are no match for an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt;
+
+The angry and perhaps frightened creature fastens his claws around your neck. And now, there&#x27;s only [[one thing left for you to do.-&gt;die]]</tw-passagedata><tw-passagedata pid="122" name="changeStory" tags="" position="1658,3785">You *do* have my pen and paper. 
+
+If you would like to temporarily assume the duties of narrator, you could, in a manner of speaking, rewrite history. 
+
+Simply write, &quot;He realized his death was nothing but a bad dream.&quot; Go ahead. 
+
+[[Write it.-&gt;enochAttacks]]
+
+&lt;%dropInventoryItem(&quot;pen&quot;);dropInventoryItem(&quot;paper&quot;);%&gt;</tw-passagedata><tw-passagedata pid="123" name="leftAloneWithEnoch" tags="" position="1400,2766">Enoch stares for a moment at the hole, and makes a sound that is at once mournful and angry. Then he turns and runs out of the chamber. 
 
 All this excitement is too much for me. Please don&#x27;t [[follow the creature.-&gt;followEnochAngry]]
 
