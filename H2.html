@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="90" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
+<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="116" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
     font-family: 'Special Elite';
     font-style: normal;
     font-weight: 400;
@@ -250,7 +250,7 @@ window.dropInventoryItem = function(itemText) {
 }
 
 window.toggleInventory = function(el, itemText) {
-	if ($.inArray(itemText, inventory) > -1) {		
+	if (isInInventory(itemText)) {		
 		inventory.splice( $.inArray(itemText, inventory), 1 );
 		$(el).html(invItems[itemText].pickUp);		 
 		showInventory();
@@ -1127,7 +1127,8 @@ And now you are [[left alone with the monster.-&gt;leftAloneWithEnoch]]
 
 [[attackEnochWithFists]]</tw-passagedata><tw-passagedata pid="89" name="followEnochAngry" tags="" position="1586,2893">[[fightAngryEnoch]]
 
-[[helpJoabInPit]]</tw-passagedata><tw-passagedata pid="90" name="helpJoabInPit" tags="" position="1237,2893">Good choice.
+[[helpJoabInPit]]</tw-passagedata><tw-passagedata pid="90" name="helpJoabInPit" tags="" position="1237,2893">&lt;%inventory.push(&quot;net&quot;); inventory.push(&quot;scalpel&quot;);%&gt;
+Good choice.
 
 You peer over the lip of the hole, and shine the flashlight into its depths. 
 
@@ -1144,16 +1145,31 @@ Joab lies at the bottom of the pit, forty feet below, half-submerged in water. Y
 Hmm. You [[need a plan.-&gt;needPlan]]
 
 
-</tw-passagedata><tw-passagedata pid="91" name="getOutsideHelp" tags="" position="1239,3336">[[unsatisfyingEnding]]</tw-passagedata><tw-passagedata pid="92" name="throwLongNet" tags="" position="1031,3171">
-In less than a minute, you&#x27;ve cut the net in half and tied it back lengthwise to form a 50-foot skinny net suitable for climbing. 
+</tw-passagedata><tw-passagedata pid="91" name="getOutsideHelp" tags="" position="1239,3336">You find your way back upstairs, looking for help. But the cafeteria ladies have packed up the kitchen. Matilda the janitor is nowhere to be found. You&#x27;re forced to run all the way back to Main Street to find Sheriff Bode to tell him about Joab McKelvey, and it takes a frightfully long time to rescue the man.
 
-Joab, even with his one leg out of action, is pretty nimble&lt;%=swap(&quot;...&quot;,&quot;... something you might know about yourself.&quot;)%&gt; He hauls himself out of the well, and lies for a moment, panting, on the floor. 
+You don&#x27;t mention Enoch--that&#x27;s Joab&#x27;s story to tell. [[But you do wonder...-&gt;unsatisfyingEnding]]</tw-passagedata><tw-passagedata pid="92" name="throwLongNet" tags="" position="1031,3171">&lt;%
+  dropInventoryItem(&quot;net&quot;);
+  dropInventoryItem(&quot;scalpel&quot;);
+%&gt;
+In less than a minute, you&#x27;ve cut the net in half and tied it back together lengthwise to form a 50-foot skinny net suitable for climbing. 
+
+Joab, even with his one leg out of action, is pretty nimble&lt;%=swap(&quot;...&quot;,&quot;... a skill that might be familiar to you.&quot;)%&gt; He hauls himself out of the well, and lies for a moment, panting, on the floor. 
 
 &lt;%=swapEsteem(&quot;throwLongNet&quot;,&quot;Well done, Harrison. Why don&#x27;t you treat yourself?&quot;, 5)%&gt;
 
 &quot;Please,&quot; he says. &quot;Go see if Enoch is all right.&quot;
 
-Please don&#x27;t, Harrison. I know you&#x27;re curious, but it&#x27;s a bad idea to [[go after that creature-&gt;trackEnoch]].</tw-passagedata><tw-passagedata pid="93" name="trackEnoch" tags="" position="1032,3308">[[emptyPoolEnding]]</tw-passagedata><tw-passagedata pid="94" name="unsatisfyingEnding" tags="" position="1234,3629">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="95" name="fightAngryEnoch" tags="" position="1699,3121">[[attackAngryEnochWithScalpel]]
+Please don&#x27;t, Harrison. I know you&#x27;re curious. But you&#x27;ve survived this far, and it&#x27;s a *very* a bad idea to [[go hunting monsters.-&gt;trackEnoch]].</tw-passagedata><tw-passagedata pid="93" name="trackEnoch" tags="" position="1032,3308">You&#x27;re going to be the death of me, Harrison Squared. 
+
+You follow the tunnel that Enoch ran down, and after many twists and turns, you find yourself in a familiar place: the great stone pool where your daily swim class takes place. 
+
+The water is eerily still. 
+
+But [[where is the creature?-&gt;emptyPoolEnding]]</tw-passagedata><tw-passagedata pid="94" name="unsatisfyingEnding" tags="" position="1234,3629">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt; Where did Enoch go? Why did he run away from home in the first place?
+
+This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+
+&lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="95" name="fightAngryEnoch" tags="" position="1699,3121">[[attackAngryEnochWithScalpel]]
 
 [[attackAngryEnochWithHorn]]
 
@@ -1179,7 +1195,16 @@ Or you could just [[yell for help.-&gt;yellForHelp]]</tw-passagedata><tw-passage
 [[joabLeavesToGetHelp]]</tw-passagedata><tw-passagedata pid="109" name="joabPullsYouOut" tags="" position="2233,3483">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="110" name="joabLeavesToGetHelp" tags="" position="2103,3477">[[unsatisfyingEnding2]]</tw-passagedata><tw-passagedata pid="111" name="unsatisfyingEnding2" tags="" position="2103,3627">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="112" name="enochFreedom" tags="" position="2433,3259">[[tellJoabAboutMate]]
 &lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_1200x927.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_500x386.png&quot; /&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="113" name="tellJoabAboutMate" tags="" position="2433,3424">[[happyEnding]]</tw-passagedata><tw-passagedata pid="114" name="enochFreedomWithJoab" tags="" position="2594,3265">[[happyEnding]]
 
-&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_1200x927.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_500x386.png&quot; /&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="115" name="happyEnding" tags="" position="2580,3627">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="116" name="emptyPoolEnding" tags="" position="1028,3629">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="117" name="followAngryEnoch" tags="" position="1430,3117">[[angryEnochFreedom]]</tw-passagedata><tw-passagedata pid="118" name="angryEnochFreedom" tags="" position="1422,3282">[[helpJoabInPit]]
+&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_1200x927.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_500x386.png&quot; /&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="115" name="happyEnding" tags="" position="2580,3627">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="116" name="emptyPoolEnding" tags="" position="1028,3629">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt; 
+He&#x27;s gone, without a trace.
+
+There are rumors that the pool connects to the ocean through a series of underwater caves--and there are more rumors that creatures much like what Enoch has turned into live out in Dunnsmouth bay, under the waves. 
+
+What was Enoch looking for? Freedom? Companionship with others like himself? We may never know. 
+
+This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+
+&lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="117" name="followAngryEnoch" tags="" position="1430,3117">[[angryEnochFreedom]]</tw-passagedata><tw-passagedata pid="118" name="angryEnochFreedom" tags="" position="1422,3282">[[helpJoabInPit]]
 
 &lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_1200x927.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_500x386.png&quot; /&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="119" name="kitchenSecondVisit" tags="" position="1411,1309">&lt;h1&gt;The Kitchen&lt;/h1&gt;
 
@@ -1197,9 +1222,6 @@ if (isInInventory(&quot;net&quot;)) {
 
    if (isInInventory(&quot;scalpel&quot;)) {
       s += &quot;&lt;br /&gt;&lt;br /&gt;Fortunately--and here&#x27;s the good news that trumps all the previous bad news--you also have Dr. Herbert&#x27;s scalpel, and some serious knot-tying skills you acquired in Mrs. Velloc&#x27;s class.&lt;br /&gt; &lt;br /&gt;So what are you waiting for? [[Get to work!-&gt;throwLongNet]]&quot;;
-
-     dropInventoryItem(&quot;net&quot;);
-     dropInventoryItem(&quot;scalpel&quot;);
    } else {
      s += &quot;&lt;br /&gt;&lt;br /&gt;Your only choice is to run and [[get help.-&gt;getOutsideHelp]] Unless you want to [[trade all your self-esteem points for a rope...-&gt;tradeForRope]]&quot;;
    }
