@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="47" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
+<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="57" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
     font-family: 'Special Elite';
     font-style: normal;
     font-weight: 400;
@@ -723,7 +723,9 @@ Well, I&#x27;m not exactly sure what this half-dissected animal is. Or rather, *
 
 Let&#x27;s hope that unlike *some* of the doctor&#x27;s experiments, this one does not come back to life. 
 &lt;/div&gt;
-Shall we [[go back to the hallway-&gt;upstairsHallway]]? &lt;%=inventoryItem(&quot;scalpel&quot;)%&gt;</tw-passagedata><tw-passagedata pid="40" name="mysteryRoom" tags="" position="1535,1744">&lt;h1&gt;Behind the Scenes&lt;/h1&gt;
+&lt;%=inventoryItem(&quot;scalpel&quot;)%&gt;
+
+Shall we [[go back to the hallway-&gt;upstairsHallway]]? </tw-passagedata><tw-passagedata pid="40" name="mysteryRoom" tags="" position="1535,1744">&lt;h1&gt;Behind the Scenes&lt;/h1&gt;
 How did you get in here? [[Leave this instant!-&gt;outerLoop]]
 
 What do you mean, [[no?-&gt;mysteryRoom2]]
@@ -783,8 +785,7 @@ Select your six apertures and&lt;div onclick=&#x27;blow()&#x27; style=&quot;font
 
 To find the next number in the sequence, simply take the current number and add the previous number to it. So, 8 + 13 = 21. 13 + 21 = 34, etc. Lovely, isn&#x27;t it? 
 
-So after 34, the next number would be...&lt;input id=&#x27;fibTest&#x27; type=&#x27;text&#x27; onchange=&#x27;fibCheck(this)&#x27;/&gt;?
-&lt;br/&gt;(Type a number and press Enter.)
+So after 34, the next number would be...&lt;input id=&#x27;fibTest&#x27; type=&#x27;text&#x27; onchange=&#x27;fibCheck(this)&#x27; width=&#x27;10px&#x27; placeholder=&#x27;type and hit enter&#x27; /&gt;?
 &lt;div id=&#x27;fibResult&#x27;&gt;&lt;/div&gt;
 
 [[Back to hall-&gt;upstairsHallway]].</tw-passagedata><tw-passagedata pid="48" name="flukehornAfter" tags="" position="482,1392">Oh, I suppose you could [[try to play it-&gt;playHorn]].
@@ -873,7 +874,7 @@ I wouldn&#x27;t do that if I were you. Why not simply back slowly out of the kit
 
 &quot;Won&#x27;t be ready for lunch on Monday,&quot; the oldest one says.
 
-&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot.-&gt;giveShark]] Better if you [[leave.-&gt;cafetorium]]&quot; : &quot;\&quot;Okay,\&quot; you say, barely hiding your exasperation. \&quot;I&#x27;ll try to find you some fresh fish.\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="57" name="title" tags="" position="303,91">&lt;% inventoryOn = false; %&gt;
+&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot?-&gt;giveShark]] Better if you [[leave.-&gt;cafetorium]]&quot; : &quot;\&quot;Okay,\&quot; you say, barely hiding your exasperation. \&quot;I&#x27;ll try to find you some fresh fish.\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="57" name="title" tags="" position="303,91">&lt;% inventoryOn = false; %&gt;
 &lt;div style=&quot;font-size: 2.5em;margine-left: -1em;&quot;&gt;
 [[Shall we begin?-&gt;credits]]
 &lt;/div&gt;
@@ -928,9 +929,11 @@ I&#x27;d go [[back the way you came-&gt;intersection]]. Definitely don&#x27;t [[
 Against all good sense, you move even closer. [[And you see...-&gt;Matilda3]]
 
 </tw-passagedata><tw-passagedata pid="62" name="Matilda3" tags="" position="1141,1456">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/matildaclose_1000x1415.png&quot; target=&quot;_blank&quot; border=&quot;0&quot;&gt;&lt;img src=&quot;https://darylgregory.files.wordpress.com/2015/03/matildaclose_400x566.png&quot; class=&quot;picture&quot; /&gt;&lt;/a&gt;
-Oh. It&#x27;s Matilda, the Janitor. Or cleaning lady. Take your pick. Either way, she&#x27;s angry&lt;%=swap(&quot;...&quot;,&quot;... (Then again, she&#x27;s always angry. You&#x27;ve run into her a few times around the school, and none of the interactions have been pleasant. Why? Because you&#x27;re a sloppy, irresponsible student, that&#x27;s why.)&quot;)%&gt;
+Oh. It&#x27;s Matilda, the janitor&lt;%=swap(&quot;...&quot;,&quot;... (Or cleaning lady. Or Maintenance Engineer. Take your pick.)&quot;)%&gt; 
 
-&quot;I just mopped there!&quot; she says. And know that you&#x27;re a bit closer to her, you can see that the weird shape that you&lt;%=swap(&quot;...&quot;,&quot;... (okay, me)&quot;)%&gt; took for a great swishing appendage is actually a great swishing mop.
+Either way, she&#x27;s angry&lt;%=swap(&quot;...&quot;,&quot;... (Then again, she&#x27;s always angry. You&#x27;ve run into her a few times around the school, and none of the interactions have been pleasant. Why? Because you&#x27;re a sloppy, irresponsible student, that&#x27;s why.)&quot;)%&gt;
+
+&quot;I just mopped there!&quot; she says. And now that you&#x27;re a bit closer to her, you can see that the weird shape that you&lt;%=swap(&quot;...&quot;,&quot;... (okay, me)&quot;)%&gt; took for a great swishing appendage is actually a great swishing mop.
 
 Yes, I suppose you could [[warn her-&gt;warnMatilda]] about the real monster. 
 
@@ -967,7 +970,7 @@ if (!isInHistory(&quot;mckelveyMusic&quot;)){
 
 &quot;What disease?&quot; you ask. 
 
-&quot;Nothing &lt;i&gt;you&#x27;ll&lt;/i&gt; every catch, city boy. Now get gone! I&#x27;m done talking.&quot;
+&quot;Nothing &lt;i&gt;you&#x27;ll&lt;/i&gt; ever catch, city boy. Now get gone! I&#x27;m done talking.&quot;
 
 I suppose you could [[walk toward the basement-&gt;movePastMatilda]]. 
 
@@ -1356,7 +1359,7 @@ Well, time to head home. Oh, wait. What about Joab? [[Shouldn&#x27;t you help hi
 
 The three cafeteria ladies are still hard at work. 
  
-&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot-&gt;giveShark]] Better if you [[leave.-&gt;cafetorium]]&quot; : &quot;\&quot;Didn&#x27;t we tell you to scat?,\&quot; the oldest lady says. \&quot;Don&#x27;t come back til you&#x27;ve found us some fresh fish!\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="118" name="attackEnochWithFists" tags="" position="1848.0004,2920">Alas, your tiny human fists are no match for an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt;
+&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot?-&gt;giveShark]] &lt;br/&gt;&lt;br/&gt;I&#x27;d much prefer it if you went back to [[the cafetorium.-&gt;cafetorium]]&quot; : &quot;\&quot;Didn&#x27;t we tell you to scat?,\&quot; the oldest lady says. \&quot;Don&#x27;t come back til you&#x27;ve found us some fresh fish!\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="118" name="attackEnochWithFists" tags="" position="1848.0004,2920">Alas, your tiny human fists are no match for an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt;
 
 The furious and perhaps frightened creature releases his brother--and turns his attention to you. 
 
