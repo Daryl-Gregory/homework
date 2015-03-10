@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="109" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
+<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="47" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
     font-family: 'Special Elite';
     font-style: normal;
     font-weight: 400;
@@ -73,7 +73,13 @@ background-repeat: no-repeat;
 	border-radius: 15px;
 }
 
-
+#fibTest {
+	height: 1.5em;
+	width: 1.5em;
+	font-family: 'Special Elite', monospace;
+	font-size: 1.5em;
+	margin-left: 5px;
+}
 
 tw-link {color: #AB4214}
 a {color: #AB4214; 
@@ -369,10 +375,10 @@ $(document).on("showpassage:after", function(e, passage) {
 		$("body").addClass("blackBackground");
 	}
 	
-	//if (inventoryOn) {
+	if (inventoryOn) {
 		var s = "<div id='inventoryContainer' onclick='showHideInventory()'><div id='inventory' style='display:none'></div><div>";		
 		$("#passage").append(s);
-	//}
+	}
 	
 });    
    
@@ -777,7 +783,8 @@ Select your six apertures and&lt;div onclick=&#x27;blow()&#x27; style=&quot;font
 
 To find the next number in the sequence, simply take the current number and add the previous number to it. So, 8 + 13 = 21. 13 + 21 = 34, etc. Lovely, isn&#x27;t it? 
 
-So after 34, the next number would be...&lt;input id=&#x27;fibTest&#x27; type=&#x27;text&#x27; onchange=&#x27;fibCheck(this)&#x27; width=&#x27;10px&#x27; placeholder=&#x27;type and hit enter&#x27; /&gt;?
+So after 34, the next number would be...&lt;input id=&#x27;fibTest&#x27; type=&#x27;text&#x27; onchange=&#x27;fibCheck(this)&#x27;/&gt;?
+&lt;br/&gt;(Type a number and press Enter.)
 &lt;div id=&#x27;fibResult&#x27;&gt;&lt;/div&gt;
 
 [[Back to hall-&gt;upstairsHallway]].</tw-passagedata><tw-passagedata pid="48" name="flukehornAfter" tags="" position="482,1392">Oh, I suppose you could [[try to play it-&gt;playHorn]].
@@ -1289,11 +1296,11 @@ if (isInInventory(&quot;net&quot;)) {
 
 &lt;%=s%&gt;
 </tw-passagedata><tw-passagedata pid="109" name="joabLeavesToGetHelp" tags="" position="2346,3602">&lt;% selfEsteem = selfEsteem-10;%&gt;
-The man swears quietly. In the dark it sounds almost as if he were next to you. He wants to go find his brother, but because of you, he&#x27;s leaving the building. 
+The man swears quietly. In the dark it sounds almost as if he were next to you. He wants to go find Enoch, but because of you, he&#x27;s forced to let his brother go. 
 
 Minus ten self-esteem points for you, young man. You now have &lt;%=selfEsteem%&gt; points.
 
-And did I mention how cold this well water is? You&#x27;ll catch your death of hypothermia&lt;%=swap(&quot;...&quot;,&quot;... That&#x27;s the condition of having a dangerously low body temperature&quot;)%&gt;&lt;%=swap(&quot;...&quot;, &quot;... Oh. You&#x27;ve heard of it? Never mind.&quot;)%&gt;
+And did I mention how cold this well water is? You&#x27;ll catch your death of hypothermia&lt;%=swap(&quot;...&quot;,&quot;... (That&#x27;s the condition of having a dangerously low body temperature. A good definition to keep in mind here in Dunnsmouth.)&quot;)%&gt; 
 
 It&#x27;s going to take some time for Joab to return. In the meantime, you are left with [[so many questions...-&gt;unsatisfyingEnding2]]</tw-passagedata><tw-passagedata pid="110" name="unsatisfyingEnding2" tags="" position="2346,3805">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt;
 Where did Enoch go? Why did he run away from home in the first place? What did he expect to find down here, in the basement of Dunnsmouth Secondary?
