@@ -449,15 +449,15 @@ You&#x27;ve never taken a music class at Dunnsmouth Secondary, and judging by th
 &lt;%=inventoryItem(&quot;instrument&quot;)%&gt;
 
 [[Back to the hall.-&gt;upstairsHallway]]</tw-passagedata><tw-passagedata pid="10" name="velloc" tags="" position="832,1177">&lt;h1&gt;Mrs. Velloc&#x27;s Room&lt;/h1&gt;
+&lt;%=swapEsteem(&quot;velloc&quot;, &quot;Congratulations. No one&#x27;s here. give yourself a self-esteem point for checking the room.&quot;, 1)%&gt;
+
 Mrs. Velloc&#x27;s Practical Skills class is, I&#x27;m sure, the highlight of your school day. Rows and rows of students, blissfully tying together [[nets]]. 
 
 It&#x27;s the essence of community spirit, don&#x27;t you think? Plus, who doesn&#x27;t appreciate a good knot? 
 
-&lt;%=swapEsteem(&quot;velloc&quot;, &quot;Speaking of appreciation, give yourself a self-esteem point for checking the room.&quot;, 1)%&gt;
-
 [[Back to the hall-&gt;upstairsHallway]]
 </tw-passagedata><tw-passagedata pid="11" name="mathRoom" tags="" position="1000,1048">&lt;h1&gt;Mr. Gint&#x27;s Room&lt;/h1&gt;
-The door is wide open, but the watery tracks do not lead inside. That&#x27;s probably a good thing for poor Mr. Gint. I do believe his head was in sorry enough shape before he cracked it on the floor. Just look at those equations scrawled across the board&lt;%=swap(&#x27;...&#x27;,&#x27;... and walls&#x27;)%&gt;&lt;%=swap(&#x27;...&#x27;, &#x27;... and a bit of the ceiling.&#x27;)%&gt; 
+The door is wide open, but the watery tracks do not lead inside. That&#x27;s probably a good thing for poor Mr. Gint. I do believe his head was in sorry enough shape before he cracked it on the floor. Just look at those equations scrawled across the board&lt;%=swap(&#x27;...&#x27;,&#x27;... and walls&#x27;)%&gt; &lt;%=swap(&#x27;...&#x27;, &#x27;... and a bit of the ceiling.&#x27;)%&gt; 
 
 You&#x27;re right -- he does seem particularly obsessed with a [[certain sequence of numbers-&gt;sequence]].
 
@@ -543,7 +543,7 @@ But here&#x27;s another odd thing: there&#x27;s water on the steps leading *up.*
 Continue on to [[the upstairs hall-&gt;upstairsHallway]] or go back [[downstairs-&gt;atrium]]?</tw-passagedata><tw-passagedata pid="22" name="flukehorn" tags="" position="419,1552">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/horn_818x1157.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/horn_300x424.png&quot; /&gt;&lt;/a&gt;
 You&#x27;ve never heard of the the flukehorn? Sigh. I forget that you&#x27;re not from around here. 
 
-Ahem. The claw-bladed double-conch flukehorn is a degenerate cousin to the bassoon, invented in 1876 by Dunnsmouth&#x27;s first (and last) orchestra conductor, Ruddigore Thropp, a man who loved mathematics and music more than life itself&lt;%=swap(&#x27;...&#x27;, &#x27;... And in retrospect, more than the lives of his family.&#x27;)%&gt;
+Ahem. The claw-bladed double-conch flukehorn is a degenerate cousin to the bassoon, invented in 1876 by Dunnsmouth&#x27;s first (and last) orchestra conductor, E. Zann-Throppe, a man who loved mathematics and music more than life itself&lt;%=swap(&#x27;...&#x27;, &#x27;... And in retrospect, more than the lives of his family.&#x27;)%&gt;
 
 Sadly, only three of the instruments were ever made&lt;%=swap(&quot;...&quot;,&quot;... perhaps because Thropp ran out of, shall we say, source material...&quot;)%&gt; and the instrument never caught on. 
 
@@ -624,7 +624,7 @@ Ignore that strange humming and scraping sound coming from [[deeper in the kitch
 
 No one is waiting today&lt;%=swap(&quot;...&quot;,&quot;... because, as I explained, it&#x27;s &lt;b&gt;Saturday&lt;/b&gt;&quot;)%&gt; 
 
-Here are four (empty) wooden chairs and a small desk with no one behind it. THere is, however, a clipboard and a small metal bell. A hand-drawn placard says, DO NOT RING BELL. 
+Here are four (empty) wooden chairs and a small desk with no one behind it. There is, however, a clipboard and a small metal bell. A hand-drawn placard says, DO NOT RING BELL. 
 
 Please, don&#x27;t [[ring the bell anyway.-&gt;ringBell]]
 
@@ -742,7 +742,7 @@ Now [[get out!-&gt;outerLoop]]
 
 Please [[go back!-&gt;upstairsHallway]].
 
-</tw-passagedata><tw-passagedata pid="43" name="musicRoomDoor" tags="" position="531,1198">The watery tracks go right past this closed door. So why would you [[go inside-&gt;musicRoom]]?
+</tw-passagedata><tw-passagedata pid="43" name="musicRoomDoor" tags="" position="486,1196">The watery tracks go right past this closed door. So why would you [[go inside-&gt;musicRoom]]?
 
 I&#x27;d [[head back-&gt;upstairsHallway]].</tw-passagedata><tw-passagedata pid="44" name="vellocDoor" tags="" position="833,1033">The moist tracks don&#x27;t go in here, but since the door is unlocked, I supposed you could [[peek inside-&gt;velloc]].</tw-passagedata><tw-passagedata pid="45" name="hybrid" tags="" position="338,1364">Surely you&#x27;ve heard Dr. Herbert bang on about hybrids and biological chimera and parallel ontogeny. He can barely shut up about it. He&#x27;s quite obsessed with the idea of transitional states -- human and beast and everything in between. 
 
@@ -781,7 +781,7 @@ Select your six apertures and&lt;div onclick=&#x27;blow()&#x27; style=&quot;font
 &lt;div style=&quot;margin-top:2em&quot; id=&quot;hornResult&quot;&gt;&lt;/div&gt;
 
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="47" name="sequence" tags="" position="1000,1198">That sequence--8, 13, 21, 34, and so on--is known as the Fibonacci Sequence. 
+</tw-passagedata><tw-passagedata pid="47" name="sequence" tags="" position="957,1196">That sequence--8, 13, 21, 34, and so on--is known as the Fibonacci Sequence. 
 
 To find the next number in the sequence, simply take the current number and add the previous number to it. So, 8 + 13 = 21. 13 + 21 = 34, etc. Lovely, isn&#x27;t it? 
 
@@ -1276,8 +1276,13 @@ Ah, you do recognize this place. This vast cavern is where your gym class takes 
 
 Enoch moves quickly now, heading for the water. He makes a noise that, if you didn&#x27;t know better, sounds like a moan of delight.
 
-And then, he leaps into the pool.  You [[rush forward to see.-&gt;enochFreedom]]</tw-passagedata><tw-passagedata pid="106" name="helpBleedingJoab" tags="" position="2572,3078">You&#x27;re surprised the man is still standing.
-[[enochFreedomWithJoab]]</tw-passagedata><tw-passagedata pid="107" name="lookForFlashlightInWater" tags="" position="2114,3264">The flashlight is nowhere to be found. 
+And then, he leaps into the pool.  You [[rush forward to see.-&gt;enochFreedom]]</tw-passagedata><tw-passagedata pid="106" name="helpBleedingJoab" tags="" position="2572,3078">You&#x27;re surprised Joab is still conscious. The man struggles to his feet. 
+
+&quot;We&#x27;ve got to get you to a hospital,&quot; you say. 
+
+&quot;Shut up,&quot; Joab explains. &quot;I gotta find Enoch. I gotta bring him home.&quot;
+
+There&#x27;s clearly no arguing with him. You put his arm over your shoulder and take his weight. Together you [[walk toward the light.-&gt;enochFreedomWithJoab]]</tw-passagedata><tw-passagedata pid="107" name="lookForFlashlightInWater" tags="" position="2114,3264">The flashlight is nowhere to be found. 
 
 How about this? If you [[turn in all your esteem points-&gt;esteemForFlashlight]], I&#x27;ll give you a flashlight.</tw-passagedata><tw-passagedata pid="108" name="yellForHelp" tags="" position="2256,3405">After a minute or two of yelling, the (presumably) bleeding Joab crawls to the edge of the hole and calls down to you.
 
@@ -1298,7 +1303,7 @@ if (isInInventory(&quot;net&quot;)) {
 %&gt;
 
 &lt;%=s%&gt;
-</tw-passagedata><tw-passagedata pid="109" name="joabLeavesToGetHelp" tags="" position="2346,3602">&lt;% selfEsteem = selfEsteem-10;%&gt;
+</tw-passagedata><tw-passagedata pid="109" name="joabLeavesToGetHelp" tags="" position="2301,3600">&lt;% selfEsteem = selfEsteem-10;%&gt;
 The man swears quietly. In the dark it sounds almost as if he were next to you. He wants to go find Enoch, but because of you, he&#x27;s forced to let his brother go. 
 
 Minus ten self-esteem points for you, young man. You now have &lt;%=selfEsteem%&gt; points.
