@@ -212,6 +212,8 @@ window.inventory = []
 window.invItems = {
 "scalpel": {"pickUp": "There's no reason to take the doctor's scalpel.", "drop": "Why don't you drop that scary scalpel?", "description": "A gleaming scalpel in your back pocket."},
 
+"collar": {"pickUp": "Please don't pick up that collar--you'll get tetanus.", "drop": "Why don't you drop that iron collar?", "description": "A rusty iron collar tucked through your belt loop."},
+	
 "net": {"pickUp": "I suppose you could pick up that large net.", "drop": "You could always let go of that large net.", "description": "A large hemp net, looped manfully over your shoulder."}, 
 	
 "instrument": {"pickUp": "Why would you want to lug around the flukehorn? You'll cut yourself!", "drop": "I suggest leaving the flukehorn behind.", "description": "The heavy, claw-bladed flukehorn in your left hand."},
@@ -382,13 +384,19 @@ $(document).on("showpassage:after", function(e, passage) {
 	
 });    
    
-</script><tw-passagedata pid="1" name="outside" tags="" position="462,305">&lt;% inventoryOn = true; %&gt;
+</script><tw-passagedata pid="1" name="outside" tags="" position="438,319">&lt;% inventoryOn = true; %&gt;
 &lt;h1&gt;Outside--Where it&#x27;s safe&lt;/h1&gt;
 Out for a walk, are we? Excellent idea, [[Harrison-&gt;harrison]]. Keeps the blood flowing and all that, especially on such a blustery day. 
 
 Why not *keep* walking? 
 
-After all, there&#x27;s nothing here on this rocky point except for (a) dangerous cliffs, (b) angry ocean, and (c) your school, good ol&#x27; Dunnsmouth Secondary. And as it&#x27;s Saturday, there&#x27;s absolutely nothing to see here. Besides, aren&#x27;t you suspended? 
+After all, there&#x27;s nothing here on this rocky point except for (a) dangerous cliffs, (b) angry ocean, and (c) your school, good ol&#x27; Dunnsmouth Secondary. And as it&#x27;s Saturday, there&#x27;s absolutely nothing to see here. 
+
+Except for perhaps a rusty, iron collar that might be used to restrain a large dog. It&#x27;s been snapped in the middle.  
+
+&lt;%=inventoryItem(&quot;collar&quot;)%&gt;
+
+(If you do pick anything up--and I don&#x27;t advise it--click on the hand at the bottom of the screen to see what you&#x27;re carrying.)
 
 Best head back [[home]]. You&#x27;re better off ignoring those [[disturbing noises-&gt;moans]]. </tw-passagedata><tw-passagedata pid="2" name="front doors" tags="" position="831,556">&lt;h1&gt;The Front Doors&lt;/h1&gt;
 
@@ -456,7 +464,7 @@ Mrs. Velloc&#x27;s Practical Skills class is, I&#x27;m sure, the highlight of yo
 It&#x27;s the essence of community spirit, don&#x27;t you think? Plus, who doesn&#x27;t appreciate a good knot? 
 
 [[Back to the hall-&gt;upstairsHallway]]
-</tw-passagedata><tw-passagedata pid="11" name="mathRoom" tags="" position="1000,1048">&lt;h1&gt;Mr. Gint&#x27;s Room&lt;/h1&gt;
+</tw-passagedata><tw-passagedata pid="11" name="mathRoom" tags="" position="969,1054">&lt;h1&gt;Mr. Gint&#x27;s Room&lt;/h1&gt;
 The door is wide open, but the watery tracks do not lead inside. That&#x27;s probably a good thing for poor Mr. Gint. I do believe his head was in sorry enough shape before he cracked it on the floor. Just look at those equations scrawled across the board&lt;%=swap(&#x27;...&#x27;,&#x27;... and walls&#x27;)%&gt; &lt;%=swap(&#x27;...&#x27;, &#x27;... and a bit of the ceiling.&#x27;)%&gt; 
 
 You&#x27;re right -- he does seem particularly obsessed with a [[certain sequence of numbers-&gt;sequence]].
@@ -672,12 +680,15 @@ After several turns (not all of them legal), you arrive at &lt;%=link%&gt;.</tw-
 Besides, all the medications are gone. That&#x27;s odd. Someone will have to speak to Nurse Mandi about that. 
 
 [[Close the cabinet.-&gt;nurseOffice]]
-</tw-passagedata><tw-passagedata pid="34" name="upstairsEndHall" tags="" position="752,1551">&lt;h1&gt;The End of the 2nd Floor Hall&lt;/h1&gt;
+</tw-passagedata><tw-passagedata pid="34" name="upstairsEndHall" tags="" position="752,1551">&lt;% story.state.sharkVisit = story.state.sharkVisit + 1;%&gt;
+&lt;h1&gt;The End of the 2nd Floor Hall&lt;/h1&gt;
 
 Congratulations, you&#x27;ve reached the narrower, grimier end of the second story hall. It&#x27;s the home to a set of stairs &lt;%=swap(&#x27;...&#x27;,&quot;... the narrower, grimier cousin to the grand staircase (and like many cousins, they don&#x27;t like each other much)&quot;)%&gt; that leads down to the main floor.
 
-&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/thresher_1100x742.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/thresher_500x322.png&quot; /&gt;&lt;/a&gt;
-Oh. And one other thing. There&#x27;s a dead thresher shark here. &lt;%=inventoryItem(&quot;shark&quot;)%&gt; 
+&lt;%= story.state.sharkVisit == 1 ? &quot;&lt;a href=&#x27;https://darylgregory.files.wordpress.com/2015/03/thresher_1100x742.png&#x27; target=&#x27;picture&#x27;&gt;&lt;img class=&#x27;picture&#x27; src=&#x27;https://darylgregory.files.wordpress.com/2015/03/thresher_500x322.png&#x27; /&gt;&lt;/a&gt;Oh. And one other thing. There&#x27;s a dead thresher shark here.&quot; : &quot;test no&quot;%&gt;
+
+
+ &lt;%=inventoryItem(&quot;shark&quot;)%&gt; 
 
 You could head [[toward the classrooms-&gt;upstairsHallway]] (and ultimately the grand staircase).
 
@@ -874,7 +885,10 @@ I wouldn&#x27;t do that if I were you. Why not simply back slowly out of the kit
 
 &quot;Won&#x27;t be ready for lunch on Monday,&quot; the oldest one says.
 
-&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot?-&gt;giveShark]] Better if you [[leave.-&gt;cafetorium]]&quot; : &quot;\&quot;Okay,\&quot; you say, barely hiding your exasperation. \&quot;I&#x27;ll try to find you some fresh fish.\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="57" name="title" tags="" position="303,91">&lt;% inventoryOn = false; %&gt;
+&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot?-&gt;giveShark]] Better if you [[leave.-&gt;cafetorium]]&quot; : &quot;\&quot;Okay,\&quot; you say, barely hiding your exasperation. \&quot;I&#x27;ll try to find you some fresh fish.\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="57" name="title" tags="" position="303,91">&lt;% 
+inventoryOn = false;
+story.state.sharkVisit = 0;
+ %&gt;
 &lt;div style=&quot;font-size: 2.5em;margine-left: -1em;&quot;&gt;
 [[Shall we begin?-&gt;credits]]
 &lt;/div&gt;
