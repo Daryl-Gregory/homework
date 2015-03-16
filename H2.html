@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="86" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
+<div id="passage"></div><tw-storydata name="Harrison Squared Dies Early" startnode="57" creator="Twine" creator-version="2.0.3" format="Snowman" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
     font-family: 'Special Elite';
     font-style: normal;
     font-weight: 400;
@@ -79,6 +79,14 @@ background-repeat: no-repeat;
 	font-family: 'Special Elite', monospace;
 	font-size: 1.5em;
 	margin-left: 5px;
+}
+
+#fibTestButton {
+	height: 1.5em;
+	font-family: 'Special Elite', monospace;
+	font-size: 1em;
+	margin-left: 5px;
+
 }
 
 tw-link {color: #AB4214}
@@ -358,9 +366,35 @@ window.blow = function() {
 	$("#hornResult").html("Well <i>that</i> didn't work at all." + hintMessage).fadeIn("slow");
 } 
 
-window.fibCheck = function(el) {
-	var message = $(el).val() == 55 ? "Exactly! Well done. <br/><br/>But this raises another question: Why would your humble narrator take time out of this busy adventure of yours to discuss a math concept? Oh well. Another mystery. <span class='click' onclick='swapEsteemSpan(this)' points='5' key='sequence'>Give yourself 5 points.</span>" : "I guess math isn't your <i>thing</i>, as the kids say. Try again. Or don't. It doesn't matter to me.";
-$("#fibResult").html(message);
+window.numFibChecks = 0;
+window.fibCheck = function() {
+	numFibChecks += 1;
+	
+	if ($("#fibTest").val() == 55) {
+		var message = "Exactly! Well done. <br/><br/>But this raises another question: Why would your humble narrator take time out of this busy adventure of yours to discuss a math concept? Oh well. Another mystery. <span class='click' onclick='swapEsteemSpan(this)' points='5' key='sequence'>Give yourself 5 points.</span>";
+		showFibResult(message);
+		return;
+	}
+	
+	if (numFibChecks < 3) {
+		var message = "I guess math isn't your <i>thing</i>, as the kids say. Try again. Or don't. It doesn't matter to me.";
+		showFibResult(message);
+		return;	
+	}
+	
+	if (numFibChecks == 3) {
+		var message = "All right, I'll give you a hint. That series of numbers is known as the Fibonacci Sequence. Does that help? Too bad your phone doesn't work, or you could doogle or boogle it or whatever.";
+		showFibResult(message);
+		return;	
+	}
+	
+	var message = "Sigh. Since you don't have an interweb connection, and Mr. Gint is not here to explain, allow me. To find the next number in the sequence, simply take the current number and add the previous number to it. So, 8 + 13 = 21. 13 + 21 = 34, etc. Lovely, isn't it?"; 
+	showFibResult(message);
+	return;	
+}
+
+window.showFibResult = function(message) {
+	$("#fibResult").hide().fadeIn("slow").html(message);
 }
  
 $(document).on("showpassage:after", function(e, passage) {
@@ -433,9 +467,9 @@ Though it&#x27;s hard to contemplate anything with that all that moaning coming 
 </tw-passagedata><tw-passagedata pid="7" name="upstairsHallway" tags="" position="761,853">&lt;h1&gt;Upstairs Hallway&lt;/h1&gt;
 The corridor is quite familiar to you, I&#x27;m sure, considering most of your classes are located here. Though someone is going to have to mop up those watery tracks&lt;%=swap(&#x27;...&#x27;, &quot;... which seem to lead in &lt;i&gt;both&lt;/i&gt; directions down this hallway. Curious.&quot;)%&gt;
 
-To the north is [[Dr. Herbert&#x27;s lab-&gt;herbertDoor]] and [[poor Mr. Gint&#x27;s room-&gt;mathRoom]].
+To the north is [[Dr. Herbert&#x27;s lab-&gt;herbertDoor]] and the [[music room.-&gt;musicRoomDoor]]
 
-South is [[Ms. Velloc&#x27;s room-&gt;vellocDoor]] and the [[music room-&gt;musicRoomDoor]]. 
+South is [[Ms. Velloc&#x27;s room-&gt;vellocDoor]] and [[poor Mr. Gint&#x27;s room.-&gt;mathRoom]]
 
 I&#x27;d advise against going into any of them. 
 
@@ -456,10 +490,10 @@ You&#x27;ve never taken a music class at Dunnsmouth Secondary, and judging by th
 
 &lt;%=inventoryItem(&quot;instrument&quot;)%&gt;
 
-[[Back to the hall.-&gt;upstairsHallway]]</tw-passagedata><tw-passagedata pid="10" name="velloc" tags="" position="832,1177">&lt;h1&gt;Mrs. Velloc&#x27;s Room&lt;/h1&gt;
+[[Back to the hall.-&gt;upstairsHallway]]</tw-passagedata><tw-passagedata pid="10" name="velloc" tags="" position="832,1177">&lt;h1&gt;Ms. Velloc&#x27;s Room&lt;/h1&gt;
 &lt;%=swapEsteem(&quot;velloc&quot;, &quot;Congratulations. No one&#x27;s here. give yourself a self-esteem point for checking the room.&quot;, 1)%&gt;
 
-Mrs. Velloc&#x27;s Practical Skills class is, I&#x27;m sure, the highlight of your school day. Rows and rows of students, blissfully tying together [[nets]]. 
+Ms. Velloc&#x27;s Practical Skills class is, I&#x27;m sure, the highlight of your school day. Rows and rows of students, blissfully tying together [[nets]]. 
 
 It&#x27;s the essence of community spirit, don&#x27;t you think? Plus, who doesn&#x27;t appreciate a good knot? 
 
@@ -469,7 +503,9 @@ The door is wide open, but the watery tracks do not lead inside. That&#x27;s pro
 
 You&#x27;re right -- he does seem particularly obsessed with a [[certain sequence of numbers-&gt;sequence]].
 
-Ah well. Don&#x27;t you worry *your* pretty little head about it. I&#x27;m sure he&#x27;ll be ready to teach your non-Euclidean geometry class by Monday &lt;%=swapEsteem(&quot;mathRoom&quot;, &quot;Don&#x27;t forget to give yourself a self-esteem point for making sure the room is empty.&quot;, 1)%&gt;
+Ah well. Don&#x27;t you worry *your* pretty little head about it. I&#x27;m sure he&#x27;ll be ready to teach your non-Euclidean geometry class by Monday.
+
+&lt;%=swapEsteem(&quot;mathRoom&quot;, &quot;Don&#x27;t forget to give yourself a self-esteem point for making sure the room is empty.&quot;, 1)%&gt;
 
 [[Back to hall-&gt;upstairsHallway]]
 </tw-passagedata><tw-passagedata pid="12" name="atrium" tags="" position="763,695">&lt;h1&gt;The Atrium&lt;/h1&gt;
@@ -566,7 +602,7 @@ Whatever you do, don&#x27;t [[try to play it-&gt;playHorn]].
 
 &lt;%=inventoryItem(&quot;net&quot;)%&gt; 
 
-[[Go back to the hall-&gt;upstairsHallway]]
+[[Done now?-&gt;velloc]]
 </tw-passagedata><tw-passagedata pid="24" name="questionGint2" tags="" position="1465,585">Mr. Gint blinks in confusion. &quot;It was wearing a shirt.&quot; 
 
 &quot;Pardon?&quot;
@@ -792,14 +828,13 @@ Select your six apertures and&lt;div onclick=&#x27;blow()&#x27; style=&quot;font
 &lt;div style=&quot;margin-top:2em&quot; id=&quot;hornResult&quot;&gt;&lt;/div&gt;
 
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="47" name="sequence" tags="" position="957,1196">That sequence--8, 13, 21, 34, and so on--is known as the Fibonacci Sequence. 
+</tw-passagedata><tw-passagedata pid="47" name="sequence" tags="" position="968,1189">That sequence--8, 13, 21, 34, and so on--is highly interesting, don&#x27;t you think? 
 
-To find the next number in the sequence, simply take the current number and add the previous number to it. So, 8 + 13 = 21. 13 + 21 = 34, etc. Lovely, isn&#x27;t it? 
-
-So after 34, the next number would be...&lt;input id=&#x27;fibTest&#x27; type=&#x27;text&#x27; onchange=&#x27;fibCheck(this)&#x27; width=&#x27;10px&#x27; placeholder=&#x27;type and hit enter&#x27; /&gt;?
+So after 34, the next number would be...&lt;input id=&#x27;fibTest&#x27; type=&#x27;text&#x27;  width=&#x27;10px&#x27; /&gt;? &lt;button id=&#x27;fibTestButton&#x27; type=&#x27;button&#x27; onclick=&#x27;fibCheck()&#x27;&gt;try now&lt;/button&gt;&lt;br /&gt;
+(Type a number and press the button to try.)
 &lt;div id=&#x27;fibResult&#x27;&gt;&lt;/div&gt;
 
-[[Back to hall-&gt;upstairsHallway]].</tw-passagedata><tw-passagedata pid="48" name="flukehornAfter" tags="" position="482,1392">Oh, I suppose you could [[try to play it-&gt;playHorn]].
+[[Are you quite finished?-&gt;mathRoom]]</tw-passagedata><tw-passagedata pid="48" name="flukehornAfter" tags="" position="482,1392">Oh, I suppose you could [[try to play it-&gt;playHorn]].
 
 &lt;%=inventoryItem(&quot;instrument&quot;)%&gt;
 
@@ -1122,7 +1157,7 @@ You look down and see that you were mere inches from falling into an open pit&lt
 
 A weird, liquid growl comes from the shadows on the far side of the pit. &quot;Enoch? Is that you?&quot; Joab walks forward, skirting the edge of the hole. &quot;Don&#x27;t be afraid.&quot; 
 
-Please, don&#x27;t [[folllow Joab any further!-&gt;confrontEnoch]]
+Please, don&#x27;t [[follow Joab any further!-&gt;confrontEnoch]]
 </tw-passagedata><tw-passagedata pid="85" name="confrontEnoch" tags="" position="1546,2603">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/enoch_1250x1618.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/enoch_400x518.png&quot; /&gt;&lt;/a&gt;
 
 A face appears in the light. It isn&#x27;t a human face. Rather, it&#x27;s as if a prehistoric lizard was pretending to be human&lt;%=swap(&quot;...&quot;, &quot;... but not very well. That backwards baseball cap, and that wife-beater T-shirt that Mr. Gint remembered, are fooling no one.&quot;)%&gt; 
@@ -1140,8 +1175,7 @@ The creature bites down on Joab&#x27;s arm. The man screams and drops the flashl
 Good heavens, what will you do? [[Grab the flashlight before it falls?-&gt;grabFlashlight]]
 
 Or [[try to save Joab?-&gt;fightEnoch]]
-
-&lt;%inventory.push(&quot;instrument&quot;);story.state.canPlayHorn = true;inventory.push(&quot;net&quot;);inventory.push(&quot;scalpel&quot;);%&gt;</tw-passagedata><tw-passagedata pid="87" name="grabFlashlight" tags="" position="1564,2728">You snatch up the flashlight just as it starts to tumble into the abyss, swing the light around--
+</tw-passagedata><tw-passagedata pid="87" name="grabFlashlight" tags="" position="1564,2728">You snatch up the flashlight just as it starts to tumble into the abyss, swing the light around--
 
 Just as the creature lifts Joab into the air with hideous strength. &quot;Enoch! No!&quot; Joab shouts. 
 
