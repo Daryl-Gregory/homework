@@ -407,7 +407,7 @@ $(document).on("showpassage:after", function(e, passage) {
 		$("body").addClass("blackBackground");
 	}
 
-	if (passage.passage.name == "falling") {
+	if (passage.passage.name.indexOf("blackout") == 0) {
 		$("body").addClass("blackBackground");
 	}
 	
@@ -745,7 +745,7 @@ In any case, you must know my position on the matter by now: &lt;b&gt;&lt;i&gt;G
 
 Don&#x27;t go into the [[basement.-&gt;basementAtrium]] 
 
-Just [[flee.-&gt;darkHall]]</tw-passagedata><tw-passagedata pid="37" name="falling" tags="" position="2088,3107">&lt;a id=&quot;falling0&quot; onclick=&quot;startFalling()&quot;&gt;You are falling&lt;/a&gt;
+Just [[flee.-&gt;darkHall]]</tw-passagedata><tw-passagedata pid="37" name="blackoutFalling" tags="" position="2088,3107">&lt;a id=&quot;falling0&quot; onclick=&quot;startFalling()&quot;&gt;You are falling&lt;/a&gt;
 
 &lt;div id=&quot;falling1&quot; style=&quot;display:none;margin-top:20px;&quot;&gt;falling...&lt;/div&gt;
 
@@ -753,14 +753,14 @@ Just [[flee.-&gt;darkHall]]</tw-passagedata><tw-passagedata pid="37" name="falli
 
 &lt;div id=&quot;falling3&quot; style=&quot;display:none; margin-top:160px&quot;&gt;falling...&lt;/div&gt;
 
-&lt;div id=&quot;falling4&quot; style=&quot;display:none; margin-top:240px&quot;&gt;[[*splash*-&gt;pit1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="pit1" tags="" position="2254,3110">&lt;h1&gt;The Well&lt;/h1&gt;
+&lt;div id=&quot;falling4&quot; style=&quot;display:none; margin-top:240px&quot;&gt;[[*splash*-&gt;blackoutPit]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="blackoutPit" tags="" position="2254,3110">&lt;h1&gt;The Well&lt;/h1&gt;
 You find yourself in the dark, half-submerged in water. Fun fact: this pit seems to be some kind of ancient well.
 
 Second fun fact? You&#x27;ve also broken your leg. Fortunately, it&#x27;s not your biological leg. But the prosthetic is definitely cracked, and by the feel of it, your space-age ankle joint is bent at a non-functional angle. 
 
-The top of the well is some forty feet above you, though it&#x27;s hard to tell in this extreme dark. Joab&#x27;s flashlight must be somewhere in the water. Care to [[look for it?-&gt;lookForFlashlightInWater]]
+The top of the well is some forty feet above you, though it&#x27;s hard to tell in this extreme dark. Joab&#x27;s flashlight must be somewhere in the water. Care to [[look for it?-&gt;blackoutLookForFlashlightInWater]]
 
-Or do you simply want to [[yell for help?-&gt;yellForHelp]]
+Or do you simply want to [[yell for help?-&gt;blackoutYellForHelp]]
 
 </tw-passagedata><tw-passagedata pid="39" name="herbertProject" tags="" position="338,1214">Ah, a beaker of acid, a gleaming scalpel, and a--
 
@@ -1125,9 +1125,9 @@ You run smack dab into a wall. &lt;%=s%&gt;  Don&#x27;t you wish &lt;i&gt;you&lt
 
 You can [[continue into the dark.-&gt;basementPassage]]
 
-Or you could just walk [[back upstairs.-&gt;basementStairs]]</tw-passagedata><tw-passagedata pid="81" name="esteemForFlashlight" tags="" position="2112,3403">Silly boy. Esteem comes from *within* -- and stays there. It&#x27;s not spare change you can use to get out of jams as if they were *magic beans.* 
+Or you could just walk [[back upstairs.-&gt;basementStairs]]</tw-passagedata><tw-passagedata pid="81" name="blackoutEsteemForFlashlight" tags="" position="2112,3403">Silly boy. Esteem comes from *within* -- and stays there. It&#x27;s not spare change you can use to get out of jams as if they were *magic beans.* 
 
-Your only option now is to [[yell for help.-&gt;yellForHelp]]</tw-passagedata><tw-passagedata pid="82" name="basementPassage" tags="" position="1605,2389">You see the flashlight bobbing in the distance, and in a moment you catch up to him. 
+Your only option now is to [[yell for help.-&gt;blackoutYellForHelp]]</tw-passagedata><tw-passagedata pid="82" name="basementPassage" tags="" position="1605,2389">You see the flashlight bobbing in the distance, and in a moment you catch up to him. 
 
 He turns around angrily. &quot;Didn&#x27;t I tell you to scat?&quot;
 
@@ -1174,7 +1174,7 @@ The creature bites down on Joab&#x27;s arm. The man screams and drops the flashl
 
 Good heavens, what will you do? [[Grab the flashlight before it falls?-&gt;grabFlashlight]]
 
-Or [[try to save Joab?-&gt;fightEnoch]]
+Or [[try to save Joab?-&gt;blackoutFightEnoch]]
 </tw-passagedata><tw-passagedata pid="87" name="grabFlashlight" tags="" position="1564,2728">You snatch up the flashlight just as it starts to tumble into the abyss, swing the light around--
 
 Just as the creature lifts Joab into the air with hideous strength. &quot;Enoch! No!&quot; Joab shouts. 
@@ -1184,14 +1184,14 @@ To no effect. The creature hurls his brother into the pit!
 Joab screams, and then you hear a splash. His scream is cut short.
 
 And now you are [[left alone with the monster.-&gt;leftAloneWithEnoch]] 
-</tw-passagedata><tw-passagedata pid="88" name="fightEnoch" tags="" position="2081,2657">The flashlight tumbles into the pit, and the room goes black. It&#x27;s going to be very hard to help Joab, who&#x27;s shouting in pain from somewhere in the dark ahead of you. 
+</tw-passagedata><tw-passagedata pid="88" name="blackoutFightEnoch" tags="" position="2081,2657">The flashlight tumbles into the pit, and the room goes black. It&#x27;s going to be very hard to help Joab, who&#x27;s shouting in pain from somewhere in the dark ahead of you. 
 
 You need to do *something.* But what?
 
-[[Rush blindly toward the brothers, screaming and punching?-&gt;attackEnochWithFists]]
+[[Rush blindly toward the brothers, screaming and punching?-&gt;blackoutAttackEnochWithFists]]
 
 [[Die early?-&gt;dieEarly]]
-&lt;%= isInInventory(&quot;scalpel&quot;) ? &quot;&lt;br/&gt;&lt;br/&gt;[[Stab blindly Dr. Herbert&#x27;s scalpel?-&gt;attackEnochWithScalpel]]&quot; : &quot;&quot;%&gt;&lt;%= isInInventory(&quot;net&quot;) ? &quot;&lt;br/&gt;&lt;br/&gt;[[Throw the net in their general direction?-&gt;attackEnochWithNet]]&quot; : &quot;&quot;%&gt;&lt;%= isInInventory(&quot;instrument&quot;) ? &quot;&lt;br/&gt;&lt;br/&gt;[[Swing away with the flukehorn?-&gt;attackEnochWithHorn]]&quot;  : &quot;&quot;%&gt;&lt;%= isInInventory(&quot;instrument&quot;) &amp;&amp; story.state.canPlayHorn ? &quot;&lt;br/&gt;&lt;br/&gt;[[Blow in the flukehorn?-&gt;attackEnochBlowHorn]]&quot;  : &quot;&quot;%&gt;</tw-passagedata><tw-passagedata pid="89" name="followEnochAngry" tags="" position="1581,2877">&lt;h1&gt;The Long, Twisty Bit&lt;/h1&gt;
+&lt;%= isInInventory(&quot;scalpel&quot;) ? &quot;&lt;br/&gt;&lt;br/&gt;[[Stab blindly Dr. Herbert&#x27;s scalpel?-&gt;blackoutAttackEnochWithScalpel]]&quot; : &quot;&quot;%&gt;&lt;%= isInInventory(&quot;net&quot;) ? &quot;&lt;br/&gt;&lt;br/&gt;[[Throw the net in their general direction?-&gt;blackoutAttackEnochWithNet]]&quot; : &quot;&quot;%&gt;&lt;%= isInInventory(&quot;instrument&quot;) ? &quot;&lt;br/&gt;&lt;br/&gt;[[Swing away with the flukehorn?-&gt;blackoutAttackEnochWithHorn]]&quot;  : &quot;&quot;%&gt;&lt;%= isInInventory(&quot;instrument&quot;) &amp;&amp; story.state.canPlayHorn ? &quot;&lt;br/&gt;&lt;br/&gt;[[Blow in the flukehorn?-&gt;blackoutAttackEnochBlowHorn]]&quot;  : &quot;&quot;%&gt;</tw-passagedata><tw-passagedata pid="89" name="followEnochAngry" tags="" position="1581,2877">&lt;h1&gt;The Long, Twisty Bit&lt;/h1&gt;
 Of all the ideas you&#x27;ve had today, this has to be the worst. 
 
 Thanks to the flashlight, you can see where the creature&lt;%=swap(&quot;...&quot;, &quot;... pardon me: &lt;i&gt;Enoch&lt;/i&gt;...&quot;)%&gt; ran off to. He&#x27;s there in the distance, and he seems to be dragging something behind him. 
@@ -1293,14 +1293,14 @@ This case may not have resolved satisfactorily, but perhaps others will investig
 
 &lt;h1&gt;The End&lt;/h1&gt;
 
-&lt;%= isInInventory(&quot;pen&quot;) &amp;&amp; isInInventory(&quot;paper&quot;) ? &quot;[[Unless...-&gt;changeStory]]&quot; : &quot;&quot;%&gt;</tw-passagedata><tw-passagedata pid="101" name="attackEnochWithScalpel" tags="" position="1973,2924">&lt;%dropInventoryItem(&quot;scalpel&quot;);%&gt;
+&lt;%= isInInventory(&quot;pen&quot;) &amp;&amp; isInInventory(&quot;paper&quot;) ? &quot;[[Unless...-&gt;changeStory]]&quot; : &quot;&quot;%&gt;</tw-passagedata><tw-passagedata pid="101" name="blackoutAttackEnochWithScalpel" tags="" position="1973,2924">&lt;%dropInventoryItem(&quot;scalpel&quot;);%&gt;
 That scalpel makes for a better scientific instrument than a weapon. Especially against an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt; Especially in the dark. Are you even sure which brother you are attacking?
 
 Then the blade is batted out of your hand, and you have your answer. 
 
 You feel huge, clawed hands lift you into the air. There&#x27;s a moment, as the creature holds you aloft, when a hopeful person might think, Perhaps he&#x27;s just going to sit me down now! 
 
-That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;falling]]</tw-passagedata><tw-passagedata pid="102" name="attackEnochWithHorn" tags="" position="2100,2923">&lt;%dropInventoryItem(&quot;instrument&quot;)%&gt;
+That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;blackoutFalling]]</tw-passagedata><tw-passagedata pid="102" name="blackoutAttackEnochWithHorn" tags="" position="2100,2923">&lt;%dropInventoryItem(&quot;instrument&quot;)%&gt;
 Well, that&#x27;s a terrible idea. 
 
 The flukhorn, while dangerously sharp&lt;%=swap(&quot;...&quot;,&quot;....(that&#x27;s a musical joke)&quot;)%&gt; is no match for an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt;  Especially in the dark. Are you even which brother you are attacking?
@@ -1309,18 +1309,18 @@ Then the horn is batted out of your hand, and you have your answer.
 
 You feel huge, clawed hands lift you into the air. There&#x27;s a moment, as the creature holds you aloft, when a hopeful person might think, Perhaps he&#x27;s just going to sit me down now! 
 
-That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;falling]]</tw-passagedata><tw-passagedata pid="103" name="attackEnochWithNet" tags="" position="2253,2919">&lt;%dropInventoryItem(&quot;net&quot;);%&gt;
+That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;blackoutFalling]]</tw-passagedata><tw-passagedata pid="103" name="blackoutAttackEnochWithNet" tags="" position="2253,2919">&lt;%dropInventoryItem(&quot;net&quot;);%&gt;
 Alas, you are no Roman gladiator, and Enoch is no dumb fish. Especially in the dark. Are you even sure if the net covered Enoch, or Joab, or both? 
 
 Then you feel huge, clawed hands lift you into the air, and you have your answer. Enoch is not slowed down a bit.
 
 There&#x27;s a moment, as the creature holds you aloft, when a hopeful person might think, Perhaps he&#x27;s just going to sit me down now! 
 
-That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;falling]]</tw-passagedata><tw-passagedata pid="104" name="attackEnochBlowHorn" tags="" position="2415,2921">This might have been a good idea, if you had any light to see by. But as you fumble to cover the correct holes in the dark, and to fit the smaller conch to your lips, you feel huge, clawed hands lift you into the air. 
+That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;blackoutFalling]]</tw-passagedata><tw-passagedata pid="104" name="blackoutAttackEnochBlowHorn" tags="" position="2415,2921">This might have been a good idea, if you had any light to see by. But as you fumble to cover the correct holes in the dark, and to fit the smaller conch to your lips, you feel huge, clawed hands lift you into the air. 
 
 There&#x27;s a moment, as the creature holds you aloft, when a hopeful person might think, Perhaps he&#x27;s just going to sit me down now!
 
-That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;falling]]
+That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;blackoutFalling]]
 </tw-passagedata><tw-passagedata pid="105" name="enochPool" tags="" position="1842,4130">&lt;h1&gt;The Pool&lt;/h1&gt;
 Ah, you do recognize this place. This vast cavern is where your gym class takes swim lessons. The huge, underground pool is surrounded by stone benches, as in a Roman coliseum.
 
@@ -1332,28 +1332,28 @@ And then, he leaps into the pool.  You [[rush forward to see.-&gt;enochFreedom]]
 
 &quot;Shut up,&quot; Joab explains. &quot;I gotta find Enoch. I gotta bring him home.&quot;
 
-There&#x27;s clearly no arguing with him. You put his arm over your shoulder and take his weight. Together you [[walk toward the light.-&gt;enochFreedomWithJoab]]</tw-passagedata><tw-passagedata pid="107" name="lookForFlashlightInWater" tags="" position="2114,3264">The flashlight is nowhere to be found. 
+There&#x27;s clearly no arguing with him. You put his arm over your shoulder and take his weight. Together you [[walk toward the light.-&gt;enochFreedomWithJoab]]</tw-passagedata><tw-passagedata pid="107" name="blackoutLookForFlashlightInWater" tags="" position="2114,3264">The flashlight is nowhere to be found. 
 
-How about this? If you [[turn in all your esteem points-&gt;esteemForFlashlight]], I&#x27;ll give you a flashlight.</tw-passagedata><tw-passagedata pid="108" name="yellForHelp" tags="" position="2256,3405">After a minute or two of yelling, the (presumably) bleeding Joab crawls to the edge of the hole and calls down to you.
+How about this? If you [[turn in all your esteem points-&gt;blackoutEsteemForFlashlight]], I&#x27;ll give you a flashlight.</tw-passagedata><tw-passagedata pid="108" name="blackoutYellForHelp" tags="" position="2256,3405">After a minute or two of yelling, the (presumably) bleeding Joab crawls to the edge of the hole and calls down to you.
 
 &quot;I guess you&#x27;re alive,&quot; he says. &quot;Got a rope?&quot;
 
 &lt;%
-var s = &quot;If only you had Mrs. Velloc&#x27;s net, and something to cut that net with. But alas, your only choice is to [[beg Joab to get help.-&gt;joabLeavesToGetHelp]]&quot;;
+var s = &quot;If only you had Mrs. Velloc&#x27;s net, and something to cut that net with. But alas, your only choice is to [[beg Joab to get help.-&gt;blackoutJoabLeavesToGetHelp]]&quot;;
 
 if (isInInventory(&quot;net&quot;)) {
     s = &quot;I have some bad news and good news. The bad news: You don&#x27;t have a rope. The good news: You do have a net. But that is quickly followed by some bad news: it&#x27;s only 25 feet long.&quot;;
 
    if (isInInventory(&quot;scalpel&quot;)) {
-      s += &quot;&lt;br /&gt;&lt;br /&gt;Fortunately--and here&#x27;s the good news that trumps all the previous bad news--you also have Dr. Herbert&#x27;s scalpel, and some serious knot-tying skills you acquired in Mrs. Velloc&#x27;s class.&lt;br /&gt; &lt;br /&gt;So what are you waiting for? [[Get to work!-&gt;throwLongNetUp]]&quot;;
+      s += &quot;&lt;br /&gt;&lt;br /&gt;Fortunately--and here&#x27;s the good news that trumps all the previous bad news--you also have Dr. Herbert&#x27;s scalpel, and some serious knot-tying skills you acquired in Mrs. Velloc&#x27;s class.&lt;br /&gt; &lt;br /&gt;So what are you waiting for? [[Get to work!-&gt;blackoutThrowLongNetUp]]&quot;;
    } else {
-     s += &quot;&lt;br /&gt;&lt;br /&gt;Your only choice is to [[beg Joab to get help.-&gt;joabLeavesToGetHelp]]&quot;;
+     s += &quot;&lt;br /&gt;&lt;br /&gt;Your only choice is to [[beg Joab to get help.-&gt;blackoutJoabLeavesToGetHelp]]&quot;;
    }
 }
 %&gt;
 
 &lt;%=s%&gt;
-</tw-passagedata><tw-passagedata pid="109" name="joabLeavesToGetHelp" tags="" position="2301,3600">&lt;% selfEsteem = selfEsteem-10;%&gt;
+</tw-passagedata><tw-passagedata pid="109" name="blackoutJoabLeavesToGetHelp" tags="" position="2301,3600">&lt;% selfEsteem = selfEsteem-10;%&gt;
 The man swears quietly. In the dark it sounds almost as if he were next to you. He wants to go find Enoch, but because of you, he&#x27;s forced to let his brother go. 
 
 Minus ten self-esteem points for you, young man. You now have &lt;%=selfEsteem%&gt; points.
@@ -1414,13 +1414,13 @@ Well, time to head home. Oh, wait. What about Joab? [[Shouldn&#x27;t you help hi
 
 The three cafeteria ladies are still hard at work. 
  
-&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot?-&gt;giveShark]] &lt;br/&gt;&lt;br/&gt;I&#x27;d much prefer it if you went back to [[the cafetorium.-&gt;cafetorium]]&quot; : &quot;\&quot;Didn&#x27;t we tell you to scat?,\&quot; the oldest lady says. \&quot;Don&#x27;t come back til you&#x27;ve found us some fresh fish!\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="118" name="attackEnochWithFists" tags="" position="1848,2920">Alas, your tiny human fists are no match for an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt; -- even if you were sure which brother you were attacking. 
+&lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot?-&gt;giveShark]] &lt;br/&gt;&lt;br/&gt;I&#x27;d much prefer it if you went back to [[the cafetorium.-&gt;cafetorium]]&quot; : &quot;\&quot;Didn&#x27;t we tell you to scat?,\&quot; the oldest lady says. \&quot;Don&#x27;t come back til you&#x27;ve found us some fresh fish!\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="118" name="blackoutAttackEnochWithFists" tags="" position="1848,2920">Alas, your tiny human fists are no match for an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt; -- even if you were sure which brother you were attacking. 
 
 Then you feel huge, clawed hands lift you into the air. I guess it was Enoch after all.  
 
 There&#x27;s a moment, as he he holds you aloft, when a hopeful person might think, Perhaps he&#x27;s just going to set me down now! 
 
-That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;falling]]</tw-passagedata><tw-passagedata pid="119" name="attackAngryEnochWithFists" tags="" position="1463,3433">Alas, your tiny human fists are no match for an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt;
+That moment ends. As well as all hope, when Enoch [[throws you into the pit.-&gt;blackoutFalling]]</tw-passagedata><tw-passagedata pid="119" name="attackAngryEnochWithFists" tags="" position="1463,3433">Alas, your tiny human fists are no match for an angry human/amphibian&lt;%=swap(&quot;...&quot;,&quot;... (humanphibian? amphibiman?)&quot;)%&gt;
 
 The furious and perhaps frightened creature fastens his claws around your neck. And now, there&#x27;s only [[one thing left for you to do.-&gt;die]]</tw-passagedata><tw-passagedata pid="120" name="changeStory" tags="" position="1568,3821">You *do* have my pen and paper. 
 
@@ -1468,7 +1468,7 @@ Joab still seems upset. He wants his brother back.
 
 [[But you do wonder...-&gt;satisfyingEnding]]
 
-</tw-passagedata><tw-passagedata pid="127" name="throwLongNetUp" tags="" position="2111,3598">&lt;%
+</tw-passagedata><tw-passagedata pid="127" name="blackoutThrowLongNetUp" tags="" position="2111,3598">&lt;%
   dropInventoryItem(&quot;net&quot;);
   dropInventoryItem(&quot;scalpel&quot;);
 %&gt;
@@ -1489,9 +1489,9 @@ But you&#x27;re left with so many questions. Where did Enoch go? Why did he run 
 
 This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
 
-&lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="129" name="trackEnochAfterPit" tags="" position="1922,3843">You creep around the corner, listening for Enoch&#x27;s heavy tread...
+&lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="129" name="trackEnochAfterPit" tags="" position="1922,3843">Ah! A dim light in the distance! You creep around the corner, listening for Enoch&#x27;s heavy tread...
 
-And the creature leaps at you out of the dark! &lt;%=swap(&quot;...&quot;, &quot;... Evidently, he didn&#x27;t like you following him.&quot;)%&gt;
+And the creature leaps at you out at you! &lt;%=swap(&quot;...&quot;, &quot;... Evidently, he didn&#x27;t like you following him.&quot;)%&gt;
 
 There&#x27;s no place to run. You have a second chance to do subdue Enoch somehow. But what will you do?
 
