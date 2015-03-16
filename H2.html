@@ -637,7 +637,7 @@ The door is locked, however, and neither Principal Montooth nor his secretary, M
 
 I suppose it&#x27;s back to [[the hall-&gt;firstFloorHall]] for you, eh?</tw-passagedata><tw-passagedata pid="27" name="cafetorium" tags="" position="1536,1071">&lt;h1&gt;Cafetorium&lt;/h1&gt;
 
-Ah, the room where the students take their lunch&lt;%=swap(&quot;...&quot;,&quot;... when they can take it all.&quot;)%&gt; Empty seats and tables fill most of the room, but at one end is a small stage, which turns this cafe*teria* into a cafe*torium*. Ha ha! So clever. So much better than the nickname the students have given it&lt;%=swap(&quot;...&quot;,&quot;... &#x27;Vomitorium.&#x27; But of course you guessed that, you crude boy.&quot;)%&gt;
+Ah, the room where the students take their lunch&lt;%=swap(&quot;...&quot;,&quot;... when they can take it at all.&quot;)%&gt; Empty seats and tables fill most of the room, but at one end is a small stage, which turns this cafe*teria* into a cafe*torium*. Ha ha! So clever. So much better than the nickname the students have given it&lt;%=swap(&quot;...&quot;,&quot;... &#x27;Vomitorium.&#x27; But of course you guessed that, you crude boy.&quot;)%&gt;
 
 &lt;%=swapEsteem(&quot;cafetorium&quot;, &quot;And yes, might as well give yourself a self-esteem point for checking this room.&quot;, 1)%&gt;
 
@@ -670,7 +670,7 @@ Ignore that strange humming and scraping sound coming from [[deeper in the kitch
 
 </tw-passagedata><tw-passagedata pid="30" name="waitingRoom" tags="" position="1579,1414">&lt;h1&gt;The Waiting Room&lt;/h1&gt;
 
-No one is waiting today&lt;%=swap(&quot;...&quot;,&quot;... because, as I explained, it&#x27;s &lt;b&gt;Saturday&lt;/b&gt;&quot;)%&gt; 
+No one is waiting today&lt;%=swap(&quot;...&quot;,&quot; (because, as I explained, it&#x27;s &lt;b&gt;Saturday.&lt;/b&gt;)&quot;)%&gt; 
 
 Here are four (empty) wooden chairs and a small desk with no one behind it. There is, however, a clipboard and a small metal bell. A hand-drawn placard says, DO NOT RING BELL. 
 
@@ -691,16 +691,13 @@ Back to the [[waiting room?-&gt;waitingRoom]] Or walk through that [[mysterious,
 &lt;% 
   story.state.outerLoopVisits ++;
   var link = &quot;nothing&quot;;
-  var choice = Math.ceil(4 * Math.random());
+  var x = story.state.outerLoopVisits;
 
-  switch(choice){
+  switch(x){
   case 1:
-    link = &quot;[[the door-&gt;intersection]]&quot;;
-    break;
-  case 2:
     link = &quot;[[the door-&gt;atriumAfterOuterLoop]]&quot;;
     break;
-  case 3:
+  case 2:
     if (!isInHistory(&quot;mysteryRoom&quot;)) {
       link= &quot;[[the door-&gt;mysteryRoom]]&quot;;  
     } else {
@@ -713,7 +710,7 @@ Back to the [[waiting room?-&gt;waitingRoom]] Or walk through that [[mysterious,
   }
 %&gt;
 
-This corridor could go almost *anywhere.* 
+This corridor could go almost *anywhere*&lt;%=swap(&quot;...&quot;, &quot; (Or nowhere at all. I&#x27;ve never figured it out, to tell you the truth.)&quot;)%&gt; 
 
 After several turns (not all of them legal), you arrive at &lt;%=link%&gt;.</tw-passagedata><tw-passagedata pid="33" name="medicineCabinet" tags="" position="1841,1572">Did you think this was the kind of story that allowed minors to rifle through medicine cabinets for drugs? If so, you are &lt;i&gt;sadly&lt;/i&gt; mistaken.
 
@@ -725,10 +722,9 @@ Besides, all the medications are gone. That&#x27;s odd. Someone will have to spe
 
 Congratulations, you&#x27;ve reached the narrower, grimier end of the second story hall. It&#x27;s the home to a set of stairs &lt;%=swap(&#x27;...&#x27;,&quot;... the narrower, grimier cousin to the grand staircase (and like many cousins, they don&#x27;t like each other much)&quot;)%&gt; that leads down to the main floor.
 
-&lt;%= story.state.sharkVisit == 1 ? &quot;&lt;a href=&#x27;https://darylgregory.files.wordpress.com/2015/03/thresher_1100x742.png&#x27; target=&#x27;picture&#x27;&gt;&lt;img class=&#x27;picture&#x27; src=&#x27;https://darylgregory.files.wordpress.com/2015/03/thresher_500x322.png&#x27; /&gt;&lt;/a&gt;Oh. And one other thing. There&#x27;s a dead thresher shark here.&quot; : &quot;test no&quot;%&gt;
+&lt;%= story.state.sharkVisit == 1 ? &quot;&lt;a href=&#x27;https://darylgregory.files.wordpress.com/2015/03/thresher_1100x742.png&#x27; target=&#x27;picture&#x27;&gt;&lt;img class=&#x27;picture&#x27; src=&#x27;https://darylgregory.files.wordpress.com/2015/03/thresher_500x322.png&#x27; /&gt;&lt;/a&gt;Oh. And one other thing. There&#x27;s a dead thresher shark here.&quot; : &quot;&quot;%&gt;
 
-
- &lt;%=inventoryItem(&quot;shark&quot;)%&gt; 
+&lt;%=inventoryItem(&quot;shark&quot;)%&gt; 
 
 You could head [[toward the classrooms-&gt;upstairsHallway]] (and ultimately the grand staircase).
 
@@ -866,7 +862,7 @@ The three of them are chopping up some kind of meat, but they don&#x27;t seem ha
 
 &quot;In short,&quot; the oldest one says. &quot;We&#x27;re short.&quot;
 
-[[&quot;Short on what?&quot; you ask-&gt;ladiesWhyShark]]
+[[&quot;Short on what?&quot; you ask.-&gt;ladiesWhyShark]]
 
 </tw-passagedata><tw-passagedata pid="52" name="warnLadies" tags="" position="1943,1190">&quot;There&#x27;s some kind of wild animal loose in the building,&quot; you say. &quot;It knocked down Mr. Gint.&quot;
 
@@ -907,7 +903,7 @@ Alternatively, you could [[warn them to leave the building.-&gt;warnLadies]]</tw
 &quot;Won&#x27;t,&quot; says the middle one.
 
 [[&quot;Why not?&quot; you ask.-&gt;ladiesWhyShark]]
-</tw-passagedata><tw-passagedata pid="55" name="giveShark" tags="" position="1982,1543">&lt;% dropInventoryItem(&quot;shark&quot;);%&gt;
+</tw-passagedata><tw-passagedata pid="55" name="giveShark" tags="" position="2004,1527">&lt;% dropInventoryItem(&quot;shark&quot;);%&gt;
 &quot;Ooh, that smells lovely!&quot; says the oldest one, crouching to sniff the carcass.
 
 &quot;Well done, my boy,&quot; says the middle one. &lt;%=swapEsteem(&quot;giveShark&quot;, &quot;She makes you feel so good, you want to give yourself some self-esteem.&quot;, 5)%&gt;
@@ -916,7 +912,7 @@ Alternatively, you could [[warn them to leave the building.-&gt;warnLadies]]</tw
 
 &quot;Outer loop?&quot; you ask.
 
-[[&quot;Right through that door,&quot; she says.-&gt;waitingRoom]]. 
+[[&quot;Right through that door,&quot; she says.-&gt;waitingRoom]]
 
 I wouldn&#x27;t do that if I were you. Why not simply back slowly out of the kitchen and [[leave-&gt;cafetorium]]?
 
@@ -927,13 +923,14 @@ I wouldn&#x27;t do that if I were you. Why not simply back slowly out of the kit
 &lt;%=isInInventory(&quot;shark&quot;) ? &quot;Why do you have that look on your face? Surely you&#x27;re not going to [[give them your dead mascot?-&gt;giveShark]] Better if you [[leave.-&gt;cafetorium]]&quot; : &quot;\&quot;Okay,\&quot; you say, barely hiding your exasperation. \&quot;I&#x27;ll try to find you some fresh fish.\&quot; &lt;br /&gt;&lt;br /&gt;Can we please [[leave now?-&gt;cafetorium]]&quot;%&gt; </tw-passagedata><tw-passagedata pid="57" name="title" tags="" position="303,91">&lt;% 
 inventoryOn = false;
 story.state.sharkVisit = 0;
+story.state.outerLoopVisits = 0;
  %&gt;
 &lt;div style=&quot;font-size: 2.5em;margine-left: -1em;&quot;&gt;
 [[Shall we begin?-&gt;credits]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="58" name="harrison" tags="" position="602,282">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_1089x1444.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_400x530.png&quot; /&gt;&lt;/a&gt;
 
-Oh, I&#x27;ve heard of you, Harrison Harrison. In the short time you&#x27;ve lived Dunnsmouth, you&#x27;ve already caused a bit of trouble. 
+Oh, I&#x27;ve heard of you, Harrison Harrison. In the short time you&#x27;ve lived in Dunnsmouth, you&#x27;ve already caused a bit of trouble. 
 
 Yes, it&#x27;s regrettable what happened to your mother. The heart bleeds. 
 
@@ -1188,7 +1185,7 @@ To no effect. The creature hurls his brother into the pit!
 Joab screams, and then you hear a splash. His scream is cut short.
 
 And now you are [[left alone with the monster.-&gt;leftAloneWithEnoch]] 
-</tw-passagedata><tw-passagedata pid="88" name="blackoutFightEnoch" tags="" position="2081,2657">The flashlight tumbles into the pit, and the room goes black. It&#x27;s going to be very hard to help Joab, who&#x27;s shouting in pain from somewhere in the dark ahead of you. 
+</tw-passagedata><tw-passagedata pid="88" name="blackoutFightEnoch" tags="" position="2103,2641">The flashlight tumbles into the pit, and the room goes black. It&#x27;s going to be very hard to help Joab, who&#x27;s shouting in pain from somewhere in the dark ahead of you. 
 
 You need to do *something.* But what?
 
