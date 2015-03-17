@@ -233,6 +233,7 @@ window.invItems = {
 "shark": {"pickUp": "Please don't pick up that dead mascot.", "drop": "Drop that shark, my boy.", "description": "Dunnsmouth's mascot, the noble (and quite dead) thresher shark."}
 }; 
 
+
 window.showHideInventory = function() {
 	if($('#inventory').is(':visible')) {
     $("#inventory").fadeOut("slow");
@@ -258,8 +259,13 @@ window.showInventory = function() {
 	$("#inventory").html(s).fadeIn("slow");
 }       
 
+window.inventoryDestroyed = [];
+
 window.dropInventoryItem = function(itemText) {
-	if ($.inArray(itemText, inventory) > -1) {		
+	if ($.inArray(itemText, inventory) > -1) {
+		if ($.inArray(itemText, inventoryDestroyed) == -1) {
+			inventoryDestroyed.push(itemText);
+		}
 		inventory.splice( $.inArray(itemText, inventory), 1 );
 	}
 	showInventory();
@@ -279,12 +285,17 @@ window.toggleInventory = function(el, itemText) {
 }
 
 window.inventoryItem = function(itemText) {
+	if ($.inArray(itemText, inventoryDestroyed) > -1) {
+		return "";
+	}
 	var verb = invItems[itemText].pickUp;
 	if ($.inArray(itemText, inventory) > -1) {
 		verb = invItems[itemText].drop;
 	}
 	return "<a onclick ='toggleInventory(this, \"" + itemText + "\")'>" + verb + "</a>"; 
 }
+
+
 
 window.isInInventory = function(itemText) {
 	if ($.inArray(itemText, inventory) > -1) {
@@ -463,8 +474,7 @@ Though it&#x27;s hard to contemplate anything with that all that moaning coming 
 (Perhaps I should have mentioned him earlier?)</tw-passagedata><tw-passagedata pid="6" name="dreams" tags="" position="421,579">
 &lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt;Sleep tight, Harrison Squared. Sleep tight. 
 
-&lt;i&gt;Refresh your browser window to start over.&lt;/i&gt;
-</tw-passagedata><tw-passagedata pid="7" name="upstairsHallway" tags="" position="761,853">&lt;h1&gt;Upstairs Hallway&lt;/h1&gt;
+&lt;i&gt;&lt;a onclick=&#x27;window.location.reload()&#x27;&gt;(Or start over.)&lt;/a&gt;&lt;/i&gt;</tw-passagedata><tw-passagedata pid="7" name="upstairsHallway" tags="" position="761,853">&lt;h1&gt;Upstairs Hallway&lt;/h1&gt;
 The corridor is quite familiar to you, I&#x27;m sure, considering most of your classes are located here. Though someone is going to have to mop up those watery tracks&lt;%=swap(&#x27;...&#x27;, &quot;... which seem to lead in &lt;i&gt;both&lt;/i&gt; directions down this hallway. Curious.&quot;)%&gt;
 
 To the north is [[Dr. Herbert&#x27;s lab-&gt;herbertDoor]] and the [[music room.-&gt;musicRoomDoor]]
@@ -568,7 +578,7 @@ Thank goodness you did the sensible thing by going home.
 
 Good night, Harrison Squared.
 
-&lt;i&gt;Refresh your browser window to start over.&lt;/i&gt;</tw-passagedata><tw-passagedata pid="20" name="firstFloorHall" tags="" position="1255,875">&lt;h1&gt;Main Hall&lt;/h1&gt;
+&lt;i&gt;&lt;a onclick=&#x27;window.location.reload()&#x27;&gt;(Or start over.)&lt;/a&gt;&lt;/i&gt;</tw-passagedata><tw-passagedata pid="20" name="firstFloorHall" tags="" position="1255,875">&lt;h1&gt;Main Hall&lt;/h1&gt;
 It&#x27;s not too late to head back the the [[atrium]].
 
 A short distance away is the [[principal&#x27;s office-&gt;principalOffice]]. You&#x27;ve been called there often enough, haven&#x27;t you?
@@ -1249,7 +1259,7 @@ The water is eerily still.
 
 But [[where is the creature?-&gt;emptyPoolEnding]]</tw-passagedata><tw-passagedata pid="94" name="unsatisfyingEnding" tags="" position="1112,3646">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt; Where did Enoch go? Why did he run away from home in the first place? What did he expect to find down here, in the basement of Dunnsmouth Secondary?
 
-This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot; (And you can always &lt;a onclick=&#x27;window.location.reload()&#x27;&gt;start the game over.&lt;/a&gt;)&quot;)%&gt;
 
 &lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="95" name="fightAngryEnoch" tags="" position="1699,3121">You creep around the corner, listening for Enoch&#x27;s heavy tread...
 
@@ -1290,7 +1300,7 @@ Or go [[rescue Joab from the pit?-&gt;helpJoabInPit]]
 
 </tw-passagedata><tw-passagedata pid="100" name="die" tags="" position="1568,3660">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt;I&#x27;m very sorry, Harrison, but you&#x27;ve made the title of this game more true than I would have liked. You&#x27;re dead&lt;%=swap(&quot;...&quot;,&quot;... kaput&quot;)%&gt; &lt;%=swap(&quot; ...&quot;,&quot;...  expired&quot;)%&gt;&lt;%=swap(&quot; ...&quot;,&quot;... gone to join the choir eternal&quot;)%&gt;&lt;%=swap(&quot; ...&quot;,&quot;... etcetera, etcetera.&quot;)%&gt;
 
-This case may not have resolved satisfactorily, but perhaps others will investigate your demise. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+This case may not have resolved satisfactorily, but perhaps others will investigate your demise. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot; (And you can always &lt;a onclick=&#x27;window.location.reload()&#x27;&gt;start the game over.&lt;/a&gt;)&quot;)%&gt;
 
 &lt;h1&gt;The End&lt;/h1&gt;
 
@@ -1364,7 +1374,7 @@ And did I mention how cold this well water is? You&#x27;ll catch your death of h
 It&#x27;s going to take some time for Joab to return. In the meantime, you are left with [[so many questions...-&gt;unsatisfyingEnding2]]</tw-passagedata><tw-passagedata pid="110" name="unsatisfyingEnding2" tags="" position="2312,3801">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt;
 Where did Enoch go? Why did he run away from home in the first place? What did he expect to find down here, in the basement of Dunnsmouth Secondary?
 
-This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot; (And you can always &lt;a onclick=&#x27;window.location.reload()&#x27;&gt;start the game over.&lt;/a&gt;)&quot;)%&gt;
 
 &lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="111" name="enochFreedom" tags="" position="1839,4276">&lt;h1&gt;Freedom&lt;/h1&gt;
 &lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_1200x927.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/enochswimming_500x386.png&quot; /&gt;&lt;/a&gt; Later, you&#x27;ll struggle to describe this moment to Joab. You&#x27;ll use the phrase, &quot;He was in his element.&quot; Because Enoch is finally in his. 
@@ -1386,7 +1396,7 @@ There are rumors that the pool connects to the ocean through a series of underwa
 
 Perhaps he&#x27;ll find peace there. 
 
-Ah well. Another mystery, Harrison Squared. There are no end to them in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+Ah well. Another mystery, Harrison Squared. There are no end to them in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot; (And you can always &lt;a onclick=&#x27;window.location.reload()&#x27;&gt;start the game over.&lt;/a&gt;)&quot;)%&gt;
 
 &lt;h1&gt;The End&lt;/h1&gt;
 </tw-passagedata><tw-passagedata pid="114" name="emptyPoolEnding" tags="" position="1352,3870">&lt;a href=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_1000x1356.png&quot; target=&quot;picture&quot;&gt;&lt;img class=&quot;picture&quot; src=&quot;https://darylgregory.files.wordpress.com/2015/03/harrison_bw_300x407.png&quot; /&gt;&lt;/a&gt; 
@@ -1396,7 +1406,7 @@ There are rumors that the pool connects to the ocean through a series of underwa
 
 What was Enoch looking for? Freedom? Companionship with others like himself? We may never know. 
 
-This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot; (And you can always &lt;a onclick=&#x27;window.location.reload()&#x27;&gt;start the game over.&lt;/a&gt;)&quot;)%&gt;
 
 &lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="115" name="angryEnochPool" tags="" position="1375,3091">&lt;h1&gt;The Pool&lt;/h1&gt;
 Ah, you do recognize this place. This vast cavern is where your gym class takes swim lessons. The huge, underground pool is surrounded by stone benches, as in a Roman coliseum.
@@ -1461,7 +1471,7 @@ There are rumors that the pool connects to the ocean through a series of underwa
 
 Perhaps he&#x27;ll find peace there. 
 
-Ah well. Another mystery, Harrison Squared. There are no end to them in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+Ah well. Another mystery, Harrison Squared. There are no end to them in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot; (And you can always &lt;a onclick=&#x27;window.location.reload()&#x27;&gt;start the game over.&lt;/a&gt;)&quot;)%&gt;
 
 &lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="126" name="tellJoabAboutEnoch" tags="" position="886,3332">You tell Joab about what you saw in the pool, and you try to explain how *free* Enoch looked in the water. 
 
@@ -1488,7 +1498,7 @@ That&#x27;s nonsense. [[Go get this man some medical help!-&gt;medicalHelp]]. I 
 
 But you&#x27;re left with so many questions. Where did Enoch go? Why did he run away from home in the first place? What was he expecting to find in the basement of Dunnsmouth Secondary?
 
-This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot;... And you can always refresh your browser if you want to play again.&quot;)%&gt;
+This case may not have resolved satisfactorily, but take heart, Harrison Squared. There are no end of mysteries in Dunnsmouth&lt;%=swap(&quot;...&quot;,&quot; (And you can always &lt;a onclick=&#x27;window.location.reload()&#x27;&gt;start the game over.&lt;/a&gt;)&quot;)%&gt;
 
 &lt;h1&gt;The End&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="129" name="trackEnochAfterPit" tags="" position="1922,3843">Ah! A dim light in the distance! You creep around the corner, listening for Enoch&#x27;s heavy tread...
 
